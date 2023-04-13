@@ -3,10 +3,13 @@
 ## Desarrollado por Jose Antonio Benitez (Hibrido) y Alberto Moreno (Nativo)
 
 ## Objetivo del Proyecto: 
-Crear una aplicacion que en el caso Hibrido gestionara los clientes, grupos , monitores y maquinas de un gimnasio y en el caso Nativo gestionara el perfil del cliente, los grupos a los que el cliente se ha apuntado, los monitores y entrenadores personales que le han sido asignados y gestionar su subcripcion al gimnasio.
+Crear una aplicacion tanto en nativo como en hibrido que gestione los clientes que tiene un gimnasio, gestionara a su vez los grupos a los que pertenecen y la duracion de su inscripcion. La aplicacion esta orientada a la administracion del gimnasio
 
 ## Base de datos:
-La base de datos sera el firebase y se usara en ambas aplicaciones. Un cliente no puede borrar monitores, ni grupos pero si puede quitarse de un grupo. En cambio el administrador del gimnasio si puede borrar los grupos, subcripciones, monitores y maquinas.
+La base de datos sera en firebase y se usara en ambas aplicaciones. Un Empleado puede estar en muchos grupos, pero un grupo solo puede tener un empleado. Un grupo puede tener muchos clientes y un cliente puede estar en muchos grupos.
+
+
 
 ## Anteproyecto: 
 https://www.figma.com/file/kvU6qBh4NmjaGoooBiBPvJ/Anteproyecto-Fitness-Gym?node-id=0%3A1&t=e7FTqe0I8Yq6Mbhf-1
+
