@@ -1,5 +1,7 @@
 # PROYECTO: FitnessGym
 
+![Logo](Imagenes/logo.png)
+
 ## Desarrollado por Jose Antonio Benitez (Hibrido) y Alberto Moreno (Nativo)
 
 ## Objetivo del Proyecto: 
