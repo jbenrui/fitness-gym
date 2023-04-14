@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar class="bg-animation">
+    <ion-back-button slot="start" defaultHref="/">Return to Home</ion-back-button>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="center">
+    <app-config-user-component [user]="(user.user$ | async)" [jsonConfigUser]="jsonConfigUser"></app-config-user-component>
+
+  </div>
+  
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-card>
+  <ion-card-header>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ng-container *ngIf="user.photo">
+            <ion-img [src]="user.photo"></ion-img>
+          </ng-container>
+
+          <ng-container *ngIf="!user.photo">
+            <ion-img src="https://ionicframework.com/docs/img/demos/avatar.svg"></ion-img>
+          </ng-container>
+        </ion-col>
+        <ion-col>
+          <ion-list *ngFor="let attribute of getAttributes(); let i = index;">
+            <ion-item *ngIf="getTypes()[i] === 'Date'">
+              <ion-label>{{getHeaders()[i]}}: {{user[attribute] | date:'mediumDate':'es-es'}}</ion-label>
+            </ion-item>
+            <ion-item *ngIf="getTypes()[i] !== 'Date'">
+              <ion-label>{{getHeaders()[i]}}: {{user[attribute]}}</ion-label>
+            </ion-item>
+          </ion-list>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-button class="edit" color="primary" fill="clear">
+                  <ion-text>Edit</ion-text>
+                </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button  (click)="signOut()" class="logout" color="primary" fill="clear" >
+                  <ion-text>Logout</ion-text>
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-header>
+</ion-card>

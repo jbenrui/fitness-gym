@@ -1,0 +1,63 @@
+/* iOS places the subtitle above the title */
+ion-card-header.ios {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+
+.logout{
+  display: flex;
+  margin-top: 10px;
+}
+.edit{
+  display: flex;
+  margin-top: 10px;
+}
+
+ion-img{
+  margin-top: 10px;
+}
+
+ion-card{
+
+    margin:auto;
+}
+
+  /* Estilos para pantallas inferiores a 600px */
+  @media (max-width: 600px) {
+      ion-img{
+          margin-top: auto;
+          width: 300px;
+          margin: auto;
+          padding-right: 20px;
+      }
+    }
+  
+  /* Estilos para pantallas superiores a 600px */
+  @media (min-width: 600px) {
+    ion-img{
+        margin-top: auto;
+        width: 400px;
+        margin: auto;
+        padding-right: 20px;
+    }
+  }
+
+  /* Estilos para pantallas inferiores a 400px */
+  @media (max-width: 400px) {
+    ion-img{
+        margin-top: 10px;
+        width: 290px;
+        margin: auto;
+        padding-right: 20px;
+    }
+  }
+
+  /* Estilos para pantallas inferiores a 380px */
+  @media (max-width: 380px) {
+    ion-img{
+        margin-top: 10px;
+        width: 220px;
+        margin: auto;
+        padding-right: 20px;
+    }
+  }

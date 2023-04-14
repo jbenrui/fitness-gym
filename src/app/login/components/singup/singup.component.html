@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-img slot="end" src="../../../../assets/logo/logo.png"></ion-img>
+    <ion-buttons slot="start">
+      <ion-button (click)="onDismiss()">X</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div id="center">
+      <ion-card>
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label>{{'login.signUp.lbl_firstname' | translate}}</ion-label>
+                  <ion-input placeholder="Jose Antonio" formControlName="first_name" type="text"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  <ion-label>{{'login.signUp.lbl_lastname' | translate}}</ion-label>
+                  <ion-input placeholder="Benitez Ruiz" type="text" formControlName="last_name"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label>{{'login.signUp.lbl_birthdate' | translate}}</ion-label>
+                  <app-date-selectable formControlName="birthdate"></app-date-selectable>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label>{{'login.signUp.lbl_nickname' | translate}}</ion-label>
+                  <ion-input placeholder="nickname" type="text" formControlName="username"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label>{{'login.lbl_email' | translate}}</ion-label>
+                    <ion-input [enterkeyhint]="'next'" autocomplete="email" placeholder="jbenrui@fitnessgym.es" formControlName="email" type="text"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-label>{{'login.lbl_password' | translate}}</ion-label>
+                    <ion-input placeholder="Xafwg1-" (keyup.enter)="form.valid?signIn():null" [enterkeyhint]="'enter'" autocomplete="password" type="password" formControlName="password"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label>{{'login.signUp.lbl_confirmPassword' | translate}}</ion-label>
+                    <ion-input placeholder="Xafwg1-" (keyup.enter)="form.valid?signIn():null" [enterkeyhint]="'enter'" autocomplete="password" type="password" formControlName="confirm_password"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label>{{'login.signUp.lbl_phone' | translate}}</ion-label>
+                    <ion-input placeholder="717117715" formControlName="phone" type="text"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-label>{{'login.signUp.lbl_dni' | translate}}</ion-label>
+                    <ion-input placeholder="39571363E" formControlName="dni" type="text"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+        </ion-card-content>
+        <ion-button [disabled]="!form.valid" type="submit" fill="clear">{{'login.btn_signup' | translate}}</ion-button>
+      </ion-card>
+    </div>
+  </form>
+</ion-content>
+  
