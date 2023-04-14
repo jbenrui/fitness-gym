@@ -1,0 +1,53 @@
+{
+    "config": [
+        {
+            "ID": "username",
+            "LabelEN": "Username",
+            "LabelES": "Usuario",
+            "Type": "string",
+            "Value": ""
+        },
+        {
+            "ID": "first_name",
+            "LabelEN": "First Name",
+            "LabelES": "Nombre",
+            "Type": "string",
+            "Value": ""
+        },
+        {
+            "ID": "last_name",
+            "LabelEN": "Last Name",
+            "LabelES": "Apellido",
+            "Type": "string",
+            "Value": ""
+        },
+        {
+            "ID": "birthdate",
+            "LabelEN": "Birthdate",
+            "LabelES": "Cumpleaños",
+            "Type": "Date",
+            "Value": ""
+        },
+        {
+            "ID": "email",
+            "LabelEN": "Email",
+            "LabelES": "Email",
+            "Type": "string",
+            "Value": ""
+        },
+        {
+            "ID": "phone",
+            "LabelEN": "Phone",
+            "LabelES": "Telefono",
+            "Type": "string",
+            "Value": ""
+        },
+        {
+            "ID": "dni",
+            "LabelEN": "Dni",
+            "LabelES": "Dni",
+            "Type": "string",
+            "Value": ""
+        }
+    ]
+}

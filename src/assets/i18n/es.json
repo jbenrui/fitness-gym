@@ -1,0 +1,20 @@
+{
+    "login":{
+        "lbl_email":"Email",
+        "lbl_password":"Contraseña",
+        "btn_signin":"Iniciar Sesión",
+        "btn_signup":"Registrate",
+        "signIn":{
+            "lbl_forgetPassword":"Olvidaste tu contraseña?"
+        },
+        "singUp":{
+            "lbl_firstname":"Nombre",
+            "lbl_lastname":"Apellido",
+            "lbl_birthdate":"Fecha de nacimiento",
+            "lbl_nickname": "Apodo",
+            "lbl_confirmPassword": "Confirmar la Contraseña",
+            "lbl_phone":"Teléfono",
+            "lbl_dni":"DNI"
+        }
+    }
+}
