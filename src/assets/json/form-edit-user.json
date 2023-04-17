@@ -1,15 +1,9 @@
 {
     "config": [
       {
-        "ID": "uid",
-        "Label": "uid",
-        "Type": "string",
-        "Value": "",
-        "Validators": {}
-      },
-      {
         "ID": "username",
-        "Label": "username",
+        "LabelEN": "Username",
+        "LabelES": "Usuario",
         "Type": "string",
         "Value": "",
         "Validators": {
@@ -19,59 +13,40 @@
       },
       {
         "ID": "first_name",
-        "Label": "first_name",
+        "LabelEN": "First Name",
+        "LabelES": "Nombre",
         "Type": "string",
         "Value": "",
         "Validators": {}
       },
       {
         "ID": "last_name",
-        "Label": "last_name",
+        "LabelEN": "Last Name",
+        "LabelES": "Apellido",
         "Type": "string",
         "Value": "",
         "Validators": {}
       },
       {
         "ID": "birthdate",
-        "Label": "birthdate",
-        "Type": "string",
-        "Value": "",
-        "Validators": {}
-      },
-      {
-        "ID": "email",
-        "Label": "email",
-        "Type": "string",
-        "Value": "",
-        "Validators": {
-          "required": true,
-          "pattern": "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}"
-        }
-      },
-      {
-        "ID": "password",
-        "Label": "password",
+        "LabelEN": "Birthdate",
+        "LabelES": "Cumpleaños",
         "Type": "string",
         "Value": "",
         "Validators": {}
       },
       {
         "ID": "phone",
-        "Label": "phone",
+        "LabelEN": "Phone",
+        "LabelES": "Telefono",
         "Type": "string",
         "Value": "",
         "Validators": {}
       },
       {
         "ID": "dni",
-        "Label": "dni",
-        "Type": "string",
-        "Value": "",
-        "Validators": {}
-      },
-      {
-        "ID": "photo",
-        "Label": "photo",
+        "LabelEN": "Dni",
+        "LabelES": "Dni",
         "Type": "string",
         "Value": "",
         "Validators": {}

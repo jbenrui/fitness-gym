@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-img slot="end" src="../../../../assets/logo/logo.png"></ion-img>
+    <ion-buttons slot="start">
+      <ion-button (click)="onDismiss()">X</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmitClick()">
+    <ng-container *ngFor="let control of jsonConfigUserForm?.config || []; let i = index;" >
+      <ion-item>
+        <ion-label>{{getHeaders()[i]}}:</ion-label>
+        <ion-input [formControlName]="control.ID"></ion-input>
+      </ion-item>
+      
+    </ng-container>    
+  </form>
+</ion-content>

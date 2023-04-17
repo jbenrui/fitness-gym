@@ -11,6 +11,7 @@ import { Camera } from '@awesome-cordova-plugins/camera/ngx';
 import { File } from '@awesome-cordova-plugins/file/ngx';
 import { DateSelectableComponent } from './components/date-selectable/date-selectable.component';
 import { ConfigUserComponent } from './components/config-user/config-user.component';
+import { EditUserFormComponent } from './components/edit-user-form/edit-user-form.component';
 
 registerLocaleData(en);
 registerLocaleData(es);
@@ -49,10 +50,12 @@ registerLocaleData(es);
     HttpClientModule,
     DateSelectableComponent,
     ConfigUserComponent,
+    EditUserFormComponent
   ],
   declarations:[
     DateSelectableComponent,
     ConfigUserComponent,
+    EditUserFormComponent
   ]
 
 })

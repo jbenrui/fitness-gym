@@ -24,12 +24,15 @@
           <ion-grid>
             <ion-row>
               <ion-col>
-                <ion-button class="edit" color="primary" fill="clear">
+                <ion-button class="edit" color="primary" (click)="onUpdateClick()" fill="clear">
+                  <ion-icon name="create-outline"></ion-icon>
                   <ion-text>Edit</ion-text>
+                  
                 </ion-button>
               </ion-col>
               <ion-col>
                 <ion-button  (click)="signOut()" class="logout" color="primary" fill="clear" >
+                  <ion-icon name="log-out-outline"></ion-icon>
                   <ion-text>Logout</ion-text>
                 </ion-button>
               </ion-col>

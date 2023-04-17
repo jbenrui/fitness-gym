@@ -4,7 +4,8 @@ export interface ConfigUserDataForm {
   
   export interface ConfigUserForm {
     ID: string
-    Label: string
+    LabelEN: string
+    LabelES: string
     Type: string
     Value: string
     Validators: ConfigUserValidatorsForm

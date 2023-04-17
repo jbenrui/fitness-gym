@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UserSVC } from '../../services/user.service';
 import { User } from '../../models/user_model_gym';
 import { ConfigUserData } from '../../models/jsonModels/configUser.model';
@@ -17,23 +17,57 @@ export interface ConfigUser {
 export class ConfigUserComponent implements OnInit {
 
 
-  headerArray:ConfigUserData[]=[];
-  typeArray:ConfigUserData[]=[];
-  bodyArray:ConfigUserData[]=[];
+  /**
+ * Array to store header data for ConfigUserData type
+ */
+headerArray: ConfigUserData[] = [];
 
-  @Input() user!:User
-  @Input() jsonConfigUser!:ConfigUser 
+/**
+ * Array to store type data for ConfigUserData type
+ */
+typeArray: ConfigUserData[] = [];
+
+/**
+ * Array to store body data for ConfigUserData type
+ */
+bodyArray: ConfigUserData[] = [];
+
+/**
+ * Input property to receive user data of type User
+ */
+@Input() user!: User;
+
+/**
+ * Input property to receive jsonConfigUser data of type ConfigUser
+ */
+@Input() jsonConfigUser!: ConfigUser;
+
+/**
+ * Output EventEmitter for update event
+ * Emits an event when the update button is clicked
+ */
+@Output() onUpdate = new EventEmitter();
+
+  
   constructor(
     private translate : TranslateService,
     private userSVC:UserSVC
-  ) {}
+  ) {
+    
+  }
 
   ngOnInit() {
   }
 
-  signOut(){
-    this.userSVC.signOut();
-  }
+/**
+ * Sign out the user
+ *
+ * Calls the `signOut()` method from the `userSVC` service to sign out the user.
+ */
+signOut() {
+  this.userSVC.signOut();
+}
+
 
   /**
    * Get Body of Json Schema 
@@ -44,6 +78,7 @@ export class ConfigUserComponent implements OnInit {
    */
 
   getBody(array: ConfigUserData[]): string[] {
+    
     array = this.jsonConfigUser?.config; // Usar el operador de seguridad de navegación
     
     const attributes: string[] = [];
@@ -69,7 +104,7 @@ export class ConfigUserComponent implements OnInit {
     
     const labels: string[] = [];
     if (array) { // Verificar si array está definido
-      if(this.translate.getLangs()[0] === "en"){
+      if(this.translate.defaultLang === "en"){
         array.forEach(config => {
           labels.push(config.LabelEN);
         });
@@ -103,15 +138,41 @@ export class ConfigUserComponent implements OnInit {
     return types;
   }
 
-  getHeaders(){
-    return this.getHeader(this.headerArray);
-  }
+/**
+ * Get the headers
+ *
+ * @returns An array with the headers
+ */
+getHeaders() {
+  return this.getHeader(this.headerArray);
+}
 
-  getAttributes(){
-    return this.getBody(this.bodyArray);
-  }
+/**
+ * Get the attributes
+ *
+ * @returns An array with the attributes
+ */
+getAttributes() {
+  return this.getBody(this.bodyArray);
+}
 
-  getTypes(){
-    return this.getType(this.typeArray);
-  }
+/**
+ * Get the types
+ *
+ * @returns An array with the types
+ */
+getTypes() {
+  return this.getType(this.typeArray);
+}
+
+/**
+ * Event handler for update button click
+ * Emits an event with the user data as payload
+ */
+onUpdateClick() {
+  this.onUpdate.emit(this.user);
+}
+
+
+
 }
