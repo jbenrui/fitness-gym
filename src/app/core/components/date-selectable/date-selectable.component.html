@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <ion-accordion-group [multiple]="true" #accordion>
   <ion-accordion value="first">
     <ion-item slot="header" color="light">
@@ -24,3 +25,31 @@
     </div>
   </ion-accordion>
 </ion-accordion-group>
+=======
+<ion-accordion-group [multiple]="true" #accordion>
+  <ion-accordion value="first">
+    <ion-item slot="header" color="light">
+      <ng-container *ngIf="selectedDateTime!=null">
+        <!--Añadir a Traductor-->
+        <ion-label color="light">{{getTime() | date:'short':undefined:'es-es'}}</ion-label>
+      </ng-container>
+      <!--Añadir a Traductor-->
+      <ion-label slot="start" *ngIf="!selectedDateTime" color="light">Select one Date</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <ion-datetime #dateTime locale="es-ES" [value]="getTime()" (ionChange)="onDateTimeChanged($event, accordion)"
+      [displayFormat]="selectedDateTime ? 'MMM D, YYYY HH:mm' : 'MMM D, YYYY'">
+        
+        <!--Añadir a Traductor-->
+        <span slot="time-label">Time</span> 
+        <ion-buttons slot="buttons">
+          <!--Añadir a Traductor-->
+          <ion-button color="danger" (click)="onCancel(dateTime,accordion)">Cancel</ion-button>
+          <!--Añadir a Traductor-->
+          <ion-button color="primary" (click)="onConfirm(dateTime)">Confirm</ion-button>
+        </ion-buttons>
+      </ion-datetime>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>
+>>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b

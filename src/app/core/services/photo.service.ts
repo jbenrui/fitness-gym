@@ -39,12 +39,17 @@ export class PhotoService {
     
   }
 
+<<<<<<< HEAD
   private async getPictureFromInputFile(input: HTMLInputElement): Promise<PhotoItem> {
     return new Promise((resolve, reject) => {
       if (!input) {
         reject(new Error("Input is null or undefined."));
         return;
       }
+=======
+  private async getPictureFromInputFile(input:HTMLInputElement):Promise<PhotoItem>{
+    return new Promise((resolve, reject)=>{
+>>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
       input.click();
       var that = this;
       input.onchange = function () {
@@ -56,14 +61,21 @@ export class PhotoService {
             blob:file
           });
         };
+<<<<<<< HEAD
         reader.onerror = (error) => {
+=======
+        reader.onerror = (error) =>{
+>>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
           reject(error);
         }
         reader.readAsDataURL(file);
       }
     });
   }
+<<<<<<< HEAD
   
+=======
+>>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
 
   async getPicture(source: 'library' | 'camera' | 'file', inputFile:HTMLInputElement=null):Promise<PhotoItem>{
     

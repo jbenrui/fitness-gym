@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { TranslateService } from '@ngx-translate/core';
+=======
+>>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
 import { UserSVC } from 'src/app/core/services/user.service';
 
 @Component({
@@ -9,6 +12,7 @@ import { UserSVC } from 'src/app/core/services/user.service';
 })
 export class HomePage implements OnInit {
 
+<<<<<<< HEAD
   selectedLanguage:string;
   language:string;
   constructor(
@@ -18,10 +22,16 @@ export class HomePage implements OnInit {
     this.selectedLanguage = this.translate.currentLang;
     this.language = this.selectedLanguage;
    }
+=======
+  constructor(
+    private userSVC:UserSVC
+  ) { }
+>>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
 
   ngOnInit() {
   }
 
+<<<<<<< HEAD
   changeLanguage(){
     if (this.selectedLanguage === 'en') {
       console.log(this.translate.setDefaultLang('es'));
@@ -31,5 +41,7 @@ export class HomePage implements OnInit {
       this.translate.setDefaultLang('en');
     }
   }
+=======
+>>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
 
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "config": [
       {
@@ -54,4 +55,87 @@
     ]
   }
 
+=======
+{
+    "config": [
+      {
+        "ID": "uid",
+        "Label": "uid",
+        "Type": "string",
+        "Value": "",
+        "Validators": {}
+      },
+      {
+        "ID": "username",
+        "Label": "username",
+        "Type": "string",
+        "Value": "",
+        "Validators": {
+          "required": true,
+          "minLength": 10
+        }
+      },
+      {
+        "ID": "first_name",
+        "Label": "first_name",
+        "Type": "string",
+        "Value": "",
+        "Validators": {}
+      },
+      {
+        "ID": "last_name",
+        "Label": "last_name",
+        "Type": "string",
+        "Value": "",
+        "Validators": {}
+      },
+      {
+        "ID": "birthdate",
+        "Label": "birthdate",
+        "Type": "string",
+        "Value": "",
+        "Validators": {}
+      },
+      {
+        "ID": "email",
+        "Label": "email",
+        "Type": "string",
+        "Value": "",
+        "Validators": {
+          "required": true,
+          "pattern": "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}"
+        }
+      },
+      {
+        "ID": "password",
+        "Label": "password",
+        "Type": "string",
+        "Value": "",
+        "Validators": {}
+      },
+      {
+        "ID": "phone",
+        "Label": "phone",
+        "Type": "string",
+        "Value": "",
+        "Validators": {}
+      },
+      {
+        "ID": "dni",
+        "Label": "dni",
+        "Type": "string",
+        "Value": "",
+        "Validators": {}
+      },
+      {
+        "ID": "photo",
+        "Label": "photo",
+        "Type": "string",
+        "Value": "",
+        "Validators": {}
+      }
+    ]
+  }
+
+>>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
   
