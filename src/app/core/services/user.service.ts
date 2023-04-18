@@ -38,7 +38,7 @@ export class UserSVC {
   private mapUser(doc: DocumentData) {
     return {
       id: 0,
-      docId: doc.id,
+      uid: doc.id,
       username: doc.data().username,
       first_name: doc.data().first_name,
       last_name: doc.data().last_name,
@@ -94,7 +94,7 @@ export class UserSVC {
    */
   async updateUser(user: User) {
     var _user = {
-      docId: user.docId,
+      uid: user.uid,
       username: user.username,
       first_name: user.first_name,
       last_name: user.last_name,
@@ -108,7 +108,9 @@ export class UserSVC {
       _user['photo'] = response.file;
     }
     try {
-      await this.firebase.updateDocument('usuarios', user.docId, _user);
+      await this.firebase.updateDocument('usuarios', user.uid, _user);
+      this.firebase.signOut();
+      this.router.navigate(['login']);
     } catch (error) {
       console.log(error);
     }
@@ -216,7 +218,7 @@ export class UserSVC {
         var user = (await this.firebase.getDocument('usuarios', id));
         resolve({
           id:0,
-          docId: user.id,
+          uid: user.id,
           username: user.data['username'],
           first_name: user.data['first_name'],
           last_name: user.data['last_name'],

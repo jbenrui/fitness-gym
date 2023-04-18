@@ -8,7 +8,7 @@
 <ion-content>
   <div class="center">
     
-    <app-config-user-component [user]="(user.user$ | async)" [jsonConfigUser]="jsonConfigUser" (onUpdate)="onUpdateUser($event)"></app-config-user-component>
+    <app-config-user-component [user]="(user.user$ | async)" [jsonConfigUser]="jsonConfigUser" (onUpdate)="onUpdateUser($event)" (onLogout)="signOut($event)"></app-config-user-component>
     
   </div>
   

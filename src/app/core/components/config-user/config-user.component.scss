@@ -6,23 +6,28 @@ ion-card-header.ios {
 
 .logout{
   display: flex;
-  margin-top: 10px;
+  padding-right: 25px;
 }
 .edit{
   display: flex;
-  margin-top: 10px;
+  
+}
+
+ion-img.md {
+  margin-top: 15%;
 }
 
 ion-icon{
   padding-right: 10px;
 }
 
-ion-img{
-  margin-top: 10px;
+.img-center{
+  margin:auto;
 }
 
-ion-card{
-    margin:auto;
+.label{
+  font-size: 15px;
+  padding-left: 10px;
 }
 
   /* Estilos para pantallas inferiores a 600px */
@@ -56,7 +61,7 @@ ion-card{
   }
 
   /* Estilos para pantallas inferiores a 380px */
-  @media (max-width: 380px) {
+  @media (max-width: 395px) {
     ion-img{
       padding-top: 90px;
         width: 220px;

@@ -36,6 +36,16 @@ export class ConfigUserPage implements OnInit {
       
     } 
 
+
+   /**
+     * Sign out the user
+     *
+     * Calls the `signOut()` method from the `userSVC` service to sign out the user.
+     */
+    signOut(user:User) {
+      this.user.signOut();
+    }
+
     onUpdateUser(user:User){
       this.userForm(user);
     }
@@ -55,7 +65,6 @@ export class ConfigUserPage implements OnInit {
         if(result && result.data){
           switch(result.data.mode){
             case 'Edit':
-              console.log("jsonConfigUserForm " + this.jsonConfigUserForm); 
               this.user.updateUser(result.data.user)
           }
         }

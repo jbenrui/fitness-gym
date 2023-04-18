@@ -32,7 +32,7 @@
             "ID": "email",
             "LabelEN": "Email",
             "LabelES": "Email",
-            "Type": "string",
+            "Type": "Email",
             "Value": ""
         },
         {

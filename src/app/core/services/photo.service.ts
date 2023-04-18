@@ -39,8 +39,12 @@ export class PhotoService {
     
   }
 
-  private async getPictureFromInputFile(input:HTMLInputElement):Promise<PhotoItem>{
-    return new Promise((resolve, reject)=>{
+  private async getPictureFromInputFile(input: HTMLInputElement): Promise<PhotoItem> {
+    return new Promise((resolve, reject) => {
+      if (!input) {
+        reject(new Error("Input is null or undefined."));
+        return;
+      }
       input.click();
       var that = this;
       input.onchange = function () {
@@ -52,13 +56,14 @@ export class PhotoService {
             blob:file
           });
         };
-        reader.onerror = (error) =>{
+        reader.onerror = (error) => {
           reject(error);
         }
         reader.readAsDataURL(file);
       }
     });
   }
+  
 
   async getPicture(source: 'library' | 'camera' | 'file', inputFile:HTMLInputElement=null):Promise<PhotoItem>{
     

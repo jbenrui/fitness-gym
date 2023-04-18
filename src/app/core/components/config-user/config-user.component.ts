@@ -47,7 +47,7 @@ bodyArray: ConfigUserData[] = [];
  * Emits an event when the update button is clicked
  */
 @Output() onUpdate = new EventEmitter();
-
+@Output() onLogout = new EventEmitter();
   
   constructor(
     private translate : TranslateService,
@@ -59,14 +59,7 @@ bodyArray: ConfigUserData[] = [];
   ngOnInit() {
   }
 
-/**
- * Sign out the user
- *
- * Calls the `signOut()` method from the `userSVC` service to sign out the user.
- */
-signOut() {
-  this.userSVC.signOut();
-}
+
 
 
   /**
@@ -171,6 +164,10 @@ getTypes() {
  */
 onUpdateClick() {
   this.onUpdate.emit(this.user);
+}
+
+onLogoutClick(){
+  this.onLogout.emit(this.user)
 }
 
 
