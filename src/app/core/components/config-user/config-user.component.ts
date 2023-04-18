@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-=======
-import { Component, Input, OnInit } from '@angular/core';
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
 import { UserSVC } from '../../services/user.service';
 import { User } from '../../models/user_model_gym';
 import { ConfigUserData } from '../../models/jsonModels/configUser.model';
@@ -21,7 +17,6 @@ export interface ConfigUser {
 export class ConfigUserComponent implements OnInit {
 
 
-<<<<<<< HEAD
   /**
  * Array to store header data for ConfigUserData type
  */
@@ -60,30 +55,12 @@ bodyArray: ConfigUserData[] = [];
   ) {
     
   }
-=======
-  headerArray:ConfigUserData[]=[];
-  typeArray:ConfigUserData[]=[];
-  bodyArray:ConfigUserData[]=[];
-
-  @Input() user!:User
-  @Input() jsonConfigUser!:ConfigUser 
-  constructor(
-    private translate : TranslateService,
-    private userSVC:UserSVC
-  ) {}
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
 
   ngOnInit() {
   }
 
-<<<<<<< HEAD
 
 
-=======
-  signOut(){
-    this.userSVC.signOut();
-  }
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
 
   /**
    * Get Body of Json Schema 
@@ -94,10 +71,7 @@ bodyArray: ConfigUserData[] = [];
    */
 
   getBody(array: ConfigUserData[]): string[] {
-<<<<<<< HEAD
     
-=======
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
     array = this.jsonConfigUser?.config; // Usar el operador de seguridad de navegación
     
     const attributes: string[] = [];
@@ -123,11 +97,7 @@ bodyArray: ConfigUserData[] = [];
     
     const labels: string[] = [];
     if (array) { // Verificar si array está definido
-<<<<<<< HEAD
       if(this.translate.defaultLang === "en"){
-=======
-      if(this.translate.getLangs()[0] === "en"){
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
         array.forEach(config => {
           labels.push(config.LabelEN);
         });
@@ -161,7 +131,6 @@ bodyArray: ConfigUserData[] = [];
     return types;
   }
 
-<<<<<<< HEAD
 /**
  * Get the headers
  *
@@ -198,22 +167,9 @@ onUpdateClick() {
 }
 
 onLogoutClick(){
-  this.onLogout.emit(this.user)
+  this.onLogout.emit()
 }
 
 
 
-=======
-  getHeaders(){
-    return this.getHeader(this.headerArray);
-  }
-
-  getAttributes(){
-    return this.getBody(this.bodyArray);
-  }
-
-  getTypes(){
-    return this.getType(this.typeArray);
-  }
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
 }

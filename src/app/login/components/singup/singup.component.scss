@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #center{
     display: grid;
     place-items: center;
@@ -18,24 +18,3 @@ ion-img{
 .ion-color-light {
     --ion-color-contrast: var(--ion-color-light-contrast, #ffffff) !important;
 }
-=======
-#center{
-    display: grid;
-    place-items: center;
-    height: 90vh;
-}
-
-ion-img{
-    width:60px;
-}
-#centerTitle{
-    display: grid;
-    place-items: center;
-    margin-top: 10%;
-    margin-left: 15%;
-}
-
-.ion-color-light {
-    --ion-color-contrast: var(--ion-color-light-contrast, #ffffff) !important;
-}
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b

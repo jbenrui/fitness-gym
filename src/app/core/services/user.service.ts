@@ -1,16 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { User, UserLogin, UserRegister } from '../models/user_model_gym';
-<<<<<<< HEAD
 import { FileUploaded, FirebaseService } from './firebase/firebase-service';
 import { Router } from '@angular/router';
 import 'firebase/auth';
 import { DocumentData } from 'firebase/firestore';
-=======
-import { FirebaseService } from './firebase/firebase-service';
-import { Router } from '@angular/router';
-import 'firebase/auth';
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +12,6 @@ import 'firebase/auth';
 export class UserSVC {
 
   private _isLogged = new BehaviorSubject<boolean>(false);
-<<<<<<< HEAD
   public isLogged$ = this._isLogged.asObservable(); // Observable para la propiedad isLogged
 
   private _user = new BehaviorSubject<any>(null);
@@ -68,37 +61,11 @@ export class UserSVC {
           this.currentUser = await this.getUserById(this.firebase.getUser().uid);
           this.navigateToHome();
         } catch (error) {
-=======
-  public isLogged$ = this._isLogged.asObservable();
-  private _user = new BehaviorSubject<User>(null);
-  public user$ = this._user.asObservable();
-
-
-
-  public currentUser:User;
-  constructor(
-    private firebase: FirebaseService,
-    private router: Router
-  ) { 
-    this.init()
-  }
-
-  private async init(){
-    this.firebase.isLogged$.subscribe(async (logged)=>{
-      if(logged){
-        try{
-          this._user.next((await this.firebase.getDocument('usuarios', this.firebase.getUser().uid)).data as User);
-          this.currentUser = await this.getUserById(this.firebase.getUser().uid);
-          this.navigateToHome();
-        }
-        catch(error){
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
           console.log(error);
         }
       }
       this._isLogged.next(logged);
     });
-<<<<<<< HEAD
 
   }
 
@@ -152,17 +119,6 @@ export class UserSVC {
   /**
    * Navigates to the home page.
    */
-=======
-    
-  }
-
-
-  //me deveulve el usuario autorizado.
-  public getAuthUser(){
-    
-    console.log(this._isLogged.getValue);
-  }
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
   private navigateToHome() {
     try {
       this.router.navigate(['home']);
@@ -171,16 +127,12 @@ export class UserSVC {
     }
   }
 
-<<<<<<< HEAD
   /**
    * Logs in a user.
    * 
    * @param dataUsers - The user login data
    */
   public async login(dataUsers: UserLogin) {
-=======
-  public async login(dataUsers: UserLogin){
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
     try {
       if (!this._isLogged.value) {
         await this.firebase.connectUserWithEmailAndPassword(dataUsers.identifier, dataUsers.password);
@@ -193,18 +145,14 @@ export class UserSVC {
     }
   }
 
-<<<<<<< HEAD
   /**
    * Signs out the user.
    */
-=======
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
   public signOut() {
     this.firebase.signOut();
     this.router.navigate(['login']);
   }
 
-<<<<<<< HEAD
   /**
    * Recovers the password of a user.
    * 
@@ -220,13 +168,6 @@ export class UserSVC {
    * 
    * @param data - The user registration data
    */
-=======
-  public async recoverPassword(email:string){
-    console.log(email)
-    await this.firebase.resetPassword(email);
-  }
-  
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
   public async register(data: UserRegister){
     try {
       if (!this._isLogged.value) {
@@ -236,19 +177,11 @@ export class UserSVC {
           username: data.username,
           first_name: data.first_name, 
           last_name: data.last_name,
-<<<<<<< HEAD
           birthdate: data.birthdate,
           email: data.email,
           phone: data.phone,
           photo: "",
           dni: data.dni,
-=======
-          birthdate:data.birthdate,
-          email: data.email,
-          phone: data.phone,
-          photo: "",
-          dni:data.dni,
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
           provider: "firebase",
           token: await user.user.getIdToken(),
         };
@@ -263,19 +196,15 @@ export class UserSVC {
     }
   }
 
-<<<<<<< HEAD
   /**
    * Gets the user list.
    * 
    * @returns The user list as an observable
    */
-=======
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
   getUserList(){
     return this._user.value;
   }
 
-<<<<<<< HEAD
   /**
    * Gets a user by ID.
    * 
@@ -284,19 +213,12 @@ export class UserSVC {
    * @returns A promise that resolves with the user object
    */
   getUserById(id: string): Promise<User>{
-=======
-  getUserById(id:string):Promise<User>{
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
     return new Promise<User>(async (resolve, reject)=>{
       try {
         var user = (await this.firebase.getDocument('usuarios', id));
         resolve({
           id:0,
-<<<<<<< HEAD
           uid: user.id,
-=======
-          docId: user.id,
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
           username: user.data['username'],
           first_name: user.data['first_name'],
           last_name: user.data['last_name'],
@@ -311,10 +233,6 @@ export class UserSVC {
         reject(error);
       }
     });
-<<<<<<< HEAD
 }
-=======
-  }
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
 
 }

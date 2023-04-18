@@ -1,11 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { ModalController } from '@ionic/angular';
 import { User } from 'firebase/auth';
 import { EditUserFormComponent } from 'src/app/core/components/edit-user-form/edit-user-form.component';
-=======
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
 import { ConfigUserDataForm } from 'src/app/core/models/jsonModels/configUserForm.model';
 import { UserSVC } from 'src/app/core/services/user.service';
 
@@ -22,20 +19,13 @@ export class ConfigUserPage implements OnInit {
   public jsonConfigUser : any = {};
   constructor(
     protected user:UserSVC,
-<<<<<<< HEAD
     private modal:ModalController,
-=======
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
     private http:HttpClient,
     ) 
     {
       this.http.get('assets/json/form-edit-user.json').subscribe((jsonConfigUserForm:ConfigUserDataForm) => {
-<<<<<<< HEAD
         this.jsonConfigUserForm = jsonConfigUserForm; 
         
-=======
-        this.jsonConfigUserForm = jsonConfigUserForm;  
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
       });
 
       this.http.get('assets/json/config-user.json').subscribe((jsonConfigUser:ConfigUserDataForm) => {
@@ -46,7 +36,6 @@ export class ConfigUserPage implements OnInit {
       
     } 
 
-<<<<<<< HEAD
 
    /**
      * Sign out the user
@@ -82,8 +71,6 @@ export class ConfigUserPage implements OnInit {
       });
 
     }
-=======
->>>>>>> 013b82b0a1f57d89709e310a207ac7edf3e3733b
     ngOnInit() {}
     
 }
