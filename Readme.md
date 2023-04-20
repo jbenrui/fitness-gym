@@ -13,6 +13,16 @@ La aplicación consta de 3 modelos. El modelo usuarios refiere a los clientes de
 ### Modelado de la base de datos. (Puede cambiar) - 13/04/2023
 ![Modelado](Imagenes/FitnessGym.png)
 
+## Requisitos Específicos del Módulo Sistemas de Gestión Empresiaral (SGE)
+Para esta asignatura procederemos a descargar los datos de los clientes (CSV o JSON), manipularlos con Pandas y crear un nuevo fichero que le sirva de entrada a PowerBI.
+
+## Requisitos Específicos del Módulo Diseño de Interfaces
+Para la asignatura de diseño de interfaces crearemos un informe a partir de esos datos en el que mostraremos gráficas como rangos de edad, grupos más/menos solicitados, monitores que están a cargo de más/menos grupos.
+
+## Trello
+Este proyecto utiliza Trello para la gestión de las tareas a realizar
+https://trello.com/b/bwXyty7u/fitnessgym
+
 ## Anteproyecto: 
 https://www.figma.com/file/kvU6qBh4NmjaGoooBiBPvJ/Anteproyecto-Fitness-Gym?node-id=0%3A1&t=e7FTqe0I8Yq6Mbhf-1
 
