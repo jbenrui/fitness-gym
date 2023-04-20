@@ -4,17 +4,18 @@ ion-card-header.ios {
     flex-flow: column-reverse;
   }
 
-.logout{
-  display: flex;
-  padding-right: 25px;
-}
 .edit{
-  display: flex;
-  
+  display: grid;
+  align-items: center;
+}
+.logout{
+  display: grid;
+  align-items: center;
 }
 
 ion-img.md {
   margin-top: 15%;
+  margin:auto;
 }
 
 ion-icon{

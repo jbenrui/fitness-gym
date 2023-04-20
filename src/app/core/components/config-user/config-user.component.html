@@ -8,22 +8,6 @@
       <ng-container *ngIf="!user.photo">
         <ion-img class="img-center" src="https://ionicframework.com/docs/img/demos/avatar.svg"></ion-img>
       </ng-container>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <ion-button class="edit" color="primary" (click)="onUpdateClick()" fill="clear">
-              <ion-icon name="create-outline"></ion-icon>
-              <ion-text>Edit</ion-text>
-            </ion-button>
-          </ion-col>
-          <ion-col>
-            <ion-button  (click)="onLogoutClick()" class="logout" color="primary" fill="clear" >
-              <ion-icon name="log-out-outline"></ion-icon>
-              <ion-text>Logout</ion-text>
-            </ion-button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
     </ion-col>
     
     <ion-col>
@@ -40,9 +24,15 @@
           <ion-label class="label">{{getHeaders()[i]}}:</ion-label>
           <ion-label class="label"> {{user[attribute]}}</ion-label>
         </ion-item>
-        
       </ion-list>
-      
+      <ion-button class="edit" color="primary" (click)="onUpdateClick()" fill="clear">
+        <ion-icon name="create-outline"></ion-icon>
+        <ion-text>{{'config.profile.btn_edit' | translate}}</ion-text>
+      </ion-button>
+      <ion-button (click)="onLogoutClick()" class="logout" color="primary" fill="clear" >
+        <ion-icon name="log-out-outline"></ion-icon>
+        <ion-text>{{'config.profile.btn_logout' | translate}}</ion-text>
+      </ion-button>
     </ion-col>
   </ion-row>
 </ion-grid>

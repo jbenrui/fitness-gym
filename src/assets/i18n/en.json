@@ -16,5 +16,17 @@
             "lbl_phone":"Phone",
             "lbl_dni":"DNI"
         }
+        
+    },
+    "config":{
+        "lbl_tittle":"Profile",
+        "profile":{
+            "btn_edit":"Edit",
+            "btn_logout":"Logout"
+        }
+    },
+    "btn_common":{
+        "btn_change_picture":"Change Picture"
+        
     }
 }
