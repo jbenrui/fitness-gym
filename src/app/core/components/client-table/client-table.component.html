@@ -1,0 +1,14 @@
+<ion-item>
+
+  <ng-container *ngIf="client?.image">
+    <ion-avatar>
+      <ion-img [src]="client?.image" ></ion-img>
+    </ion-avatar>
+  </ng-container>
+
+  <ng-container *ngIf="!client?.image">
+    <ion-avatar>
+      <ion-img src="https://ionicframework.com/docs/img/demos/avatar.svg"></ion-img>
+    </ion-avatar>
+  </ng-container>
+</ion-item>

@@ -12,6 +12,10 @@ import { File } from '@awesome-cordova-plugins/file/ngx';
 import { DateSelectableComponent } from './components/date-selectable/date-selectable.component';
 import { ConfigUserComponent } from './components/config-user/config-user.component';
 import { EditUserFormComponent } from './components/edit-user-form/edit-user-form.component';
+import { RouterModule } from '@angular/router';
+import { HomePage } from '../pages/home/home.page';
+import { ClientTableComponent } from './components/client-table/client-table.component';
+import { ClientHeaderTableComponent } from './components/client-header-table/client-header-table.component';
 
 registerLocaleData(en);
 registerLocaleData(es);
@@ -24,7 +28,6 @@ registerLocaleData(es);
     IonicModule.forRoot(),
     ReactiveFormsModule,
     HttpClientModule,
-
     TranslateModule.forChild({
       loader:{ 
         provide:TranslateLoader,
@@ -50,12 +53,16 @@ registerLocaleData(es);
     HttpClientModule,
     DateSelectableComponent,
     ConfigUserComponent,
-    EditUserFormComponent
+    EditUserFormComponent,
+    ClientTableComponent,
+    ClientHeaderTableComponent
   ],
   declarations:[
     DateSelectableComponent,
     ConfigUserComponent,
-    EditUserFormComponent
+    EditUserFormComponent,
+    ClientTableComponent,
+    ClientHeaderTableComponent
   ]
 
 })

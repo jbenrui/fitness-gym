@@ -1,6 +1,7 @@
 
 export interface clientGym{
-   iduser_gym:string,
+   id:number,
+   docId:string,
    name:string,
    surname:string, 
    email:string,

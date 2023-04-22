@@ -103,8 +103,9 @@ export class UserSVC {
       phone: user.phone,
       dni: user.dni,
     };
-    if (user['photo']) {
-      var response: FileUploaded = await this.uploadImage(user['photo']);
+    if (user['pictureFile']) {
+      console.log("pictureFIle: "+user['pictureFile'])
+      var response: FileUploaded = await this.uploadImage(user['pictureFile']);
       _user['photo'] = response.file;
     }
     try {

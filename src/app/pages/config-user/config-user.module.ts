@@ -11,6 +11,8 @@ import { CoreModule } from 'src/app/core/core.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { createTranslateLoader } from 'src/app/core/utils/translate';
 import { HttpClient } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { ConfigUserComponent } from 'src/app/core/components/config-user/config-user.component';
 
 @NgModule({
   imports: [
@@ -20,7 +22,7 @@ import { HttpClient } from '@angular/common/http';
     
     ConfigUserPageRoutingModule,
     CoreModule,
-    
+    RouterModule.forChild([{ path: '', component: ConfigUserComponent }]),
     TranslateModule.forChild({
       loader:{ 
         provide:TranslateLoader,

@@ -22,7 +22,7 @@ export interface FirestoreImages{
 }
 
 export const FIRESTORE_CLIENTS_COLLECTION = 'fitnessgym-clients';
-export const FIRESTORE_MONITOR_COLLECTION = 'fitnessgym-monitor';
+export const FIRESTORE_USUARIOS_COLLECTION = 'fitnessgym-usuarios';
 export const FIRESTORE_GROUP_COLLECTION = 'fitnessgym-group';
 export const FIRESTORE_ASSING_COLLECTION = 'fitnessgym-assing';
 export const FIRESTORE_MACHINE_COLLECTION = 'fitnessgym-machine';

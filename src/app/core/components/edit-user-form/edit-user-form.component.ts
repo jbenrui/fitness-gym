@@ -97,8 +97,7 @@ export class EditUserFormComponent implements OnInit {
         this.form.addControl(control.ID, this.fb.control(this.user[control.ID]));
         if(this.user.photo){
           this.currentImage.next(this.user.photo);
-        }else {
-          this.form.addControl(control.ID, this.fb.control(null));
+          this.form.addControl('pictureFile', this.fb.control(null));
         }
       }else{
         this.form.addControl(control.ID, this.fb.control(this.user[control.ID]));
@@ -113,7 +112,7 @@ export class EditUserFormComponent implements OnInit {
     this.currentImage.next(item.base64);
     this.cdr.detectChanges();
     if (this.form.controls.hasOwnProperty('photo')) {
-      this.form.controls['photo'].setValue(item.blob);
+      this.form.controls['pictureFile'].setValue(item.blob);
     }
   }
 
