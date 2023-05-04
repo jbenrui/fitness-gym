@@ -1,0 +1,60 @@
+{
+    "config": [
+        {
+            "ID": "name",
+            "LabelEN": "Name",
+            "LabelES": "Nombre",
+            "Type": "string",
+            "Value": ""
+        },
+        {
+            "ID": "surname",
+            "LabelEN": "Surname",
+            "LabelES": "Apellido",
+            "Type": "string",
+            "Value": ""
+        },
+        {
+            "ID": "email",
+            "LabelEN": "Email",
+            "LabelES": "Email",
+            "Type": "Email",
+            "Value": ""
+        },
+        {
+            "ID": "birthdate",
+            "LabelEN": "Birthdate",
+            "LabelES": "Fecha de nacimiento",
+            "Type": "Date",
+            "Value": ""
+        },
+        {
+            "ID": "postal_code",
+            "LabelEN": "Postal Code",
+            "LabelES": "Código postal",
+            "Type": "string",
+            "Value": ""
+        },
+        {
+            "ID": "phone",
+            "LabelEN": "Phone",
+            "LabelES": "Teléfono",
+            "Type": "string",
+            "Value": ""
+        },
+        {
+            "ID": "photo",
+            "LabelEN": "Photo",
+            "LabelES": "Foto",
+            "Type": "string",
+            "Value": ""
+        },
+        {
+            "ID": "inscription",
+            "LabelEN": "Inscription",
+            "LabelES": "Inscripción",
+            "Type": "string",
+            "Value": ""
+        }
+    ]
+}

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { clientGym } from '../../models/client_model_gym';
 
 @Component({
   selector: 'app-client-table',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientTableComponent implements OnInit {
 
+  @Input() client:clientGym;
   constructor() { }
 
   ngOnInit() {}

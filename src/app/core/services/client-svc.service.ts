@@ -99,7 +99,7 @@ export class ClientSvcService {
     }
   }
 
-  async updateEquipment(client:clientGym){
+  async updateClient(client:clientGym){
     var _client = {
       id:0,
       docId:client.docId,
