@@ -85,35 +85,28 @@ export class EditUserFormComponent implements OnInit {
   }
 
   createForm(controls: ConfigUserForm[]) {
-  for (const control of controls) {
-    console.log(this.user)
     this.form.addControl('uid', this.fb.control(this.user.uid));
     this.form.addControl('email', this.fb.control(this.user.email));
-
-    // Add the control only if it doesn't already exist in the form group
-    if (!this.form.contains(control.ID)) {
-
-      if(control.ID === 'photo'){
-        this.form.addControl(control.ID, this.fb.control(this.user[control.ID]));
-        if(this.user.photo){
-          this.currentImage.next(this.user.photo);
-          this.form.addControl('pictureFile', this.fb.control(null));
-        }
-      }else{
-        this.form.addControl(control.ID, this.fb.control(this.user[control.ID]));
-      }
+    for (const control of controls) {
+      this.form.addControl(control.ID, this.fb.control(this.user[control.ID]));
     }
+
+    
+    
+    this.form.addControl('photo', this.fb.control(this.user.photo));
+    // Add the attribute only if it already exist in the variable
+    if(this.user.photo){
+      this.currentImage.next(this.user.photo);
+    }
+
+    this.mode = "Edit"
   }
-  this.mode = "Edit"
-}
   
   async changePic(fileLoader:HTMLInputElement, mode:'library' | 'camera' | 'file'){
     var item:PhotoItem = await this.photoSvc.getPicture(mode, fileLoader);
     this.currentImage.next(item.base64);
     this.cdr.detectChanges();
-    if (this.form.controls.hasOwnProperty('photo')) {
-      this.form.controls['pictureFile'].setValue(item.blob);
-    }
+    this.form.controls['photo'].setValue(item.blob);
   }
 
   onDismiss(){

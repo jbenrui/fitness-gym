@@ -7,7 +7,7 @@
         "signIn":{
             "lbl_forgetPassword":"Olvidaste tu contraseña?"
         },
-        "singUp":{
+        "signUp":{
             "lbl_firstname":"Nombre",
             "lbl_lastname":"Apellido",
             "lbl_birthdate":"Fecha de nacimiento",
@@ -27,5 +27,19 @@
     "btn_common":{
         "btn_change_picture":"Cambiar Foto"
         
+    },
+    "date":{
+        "lbltime":"Tiempo",
+        "lblselectabled":"Selecciona una fecha"
+    },
+    "general":{
+        "btn_cancel":"Cancelar",
+        "btn_add":"Añadir",
+        "btn_delete":"Borrar",
+        "btn_update":"Modificar",
+        "btn_close":"Cerrar",
+        "btn_guardar":"Guardar",
+        "warning":"¿Estas seguro que quieres borrar el esto?",
+        "exist":"No es posible borrar el elemento, ya que esta asignado a otro"
     }
 }

@@ -10,7 +10,7 @@
 <ion-content>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <ng-container *ngIf="currentImage.value">
-      <ion-img class="img-user" [src]="currentImage$"></ion-img>
+      <ion-img class="img-user" [src]="(currentImage$ | async)"></ion-img>
     </ng-container>
 
     <ng-container *ngIf="!currentImage.value">

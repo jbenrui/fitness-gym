@@ -28,5 +28,19 @@
     "btn_common":{
         "btn_change_picture":"Change Picture"
         
+    },
+    "date":{
+        "lbltime":"Time",
+        "lblselectabled":"Select one Date"
+    },
+    "general":{
+        "btn_cancel":"Cancel",
+        "btn_add":"Add",
+        "btn_delete":"Delete",
+        "btn_update":"Update",
+        "btn_guardar":"Save",
+        "btn_close":"Close",
+        "warning":"¿Are you sure that you want delete this?",
+        "exist":"Its not possible to delete the element, it assing to other element"
     }
 }
