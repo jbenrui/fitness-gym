@@ -43,13 +43,6 @@
             "Value": ""
         },
         {
-            "ID": "photo",
-            "LabelEN": "Photo",
-            "LabelES": "Foto",
-            "Type": "string",
-            "Value": ""
-        },
-        {
             "ID": "inscription",
             "LabelEN": "Inscription",
             "LabelES": "Inscripción",

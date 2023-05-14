@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { clientGym } from '../../models/client_model_gym';
 
 @Component({
@@ -7,7 +7,8 @@ import { clientGym } from '../../models/client_model_gym';
   styleUrls: ['./client-table.component.scss'],
 })
 export class ClientTableComponent implements OnInit {
-
+  @Output() onUpdate = new EventEmitter;
+  @Output() onDelete = new EventEmitter;
   @Input() client!:clientGym;
   constructor() { 
     
@@ -17,4 +18,11 @@ export class ClientTableComponent implements OnInit {
     console.log(this.client)
   }
 
+  onUpdateClick(){
+    this.onUpdate.emit(this.client);
+  }
+
+  onDeleteClick(){
+    this.onDelete.emit(this.client);
+  }
 }

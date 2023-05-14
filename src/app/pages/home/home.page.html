@@ -9,7 +9,7 @@
 <ion-content>
   <app-client-header-table [jsonTableBody]="jsonTableBody"></app-client-header-table>
   <ng-container *ngFor="let client of getClientList() | async">
-    <app-client-table [client]="client"></app-client-table>
+    <app-client-table [client]="client" (onUpdate)="onUpdateClient($event)" (onDelete)="onDeleteClient($event)"></app-client-table>
   </ng-container>
   
   <ion-fab vertical="bottom" horizontal="end"  slot="fixed" >

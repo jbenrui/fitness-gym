@@ -90,8 +90,6 @@ export class EditUserFormComponent implements OnInit {
     for (const control of controls) {
       this.form.addControl(control.ID, this.fb.control(this.user[control.ID]));
     }
-
-    
     
     this.form.addControl('photo', this.fb.control(this.user.photo));
     // Add the attribute only if it already exist in the variable

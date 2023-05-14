@@ -71,8 +71,7 @@ export class HomePage implements OnInit {
 onAddClient(){
   this.clientForm(null);
 }
-onUpdateEquipment(client:clientGym){
-  console.log("page:" + client.docId)
+onUpdateClient(client:clientGym){
   this.clientForm(client);
 } 
 
@@ -80,8 +79,6 @@ getClientList() {
     return this.clientSVC.client;
 }
 
-
-/*
 async onDeleteAlert(client:any){
   const alert = await this.alert.create({
     header: await lastValueFrom(this.translate.get('general.warning')),
@@ -108,10 +105,8 @@ async onDeleteAlert(client:any){
 
   const { role } = await alert.onDidDismiss();
 }
-*/
 
-/*
-async onClientExistsAlert(equipment:any){
+async onClientExistsAlert(client:any){
   const alert = await this.alert.create({
     header: 'Error',
     message: await lastValueFrom(this.translate.get('general.exist')),
@@ -129,16 +124,15 @@ async onClientExistsAlert(equipment:any){
 
   const { role } = await alert.onDidDismiss();
 }
-*/
 
-/*
-async onDeleteEquipment(equipament:any){
+async onDeleteClient(client:any){
   try{
-    const workout = await this.workoutSVC.getWorkoutByEquipment(equipament.docId);
-    if(!workout){
-      this.onDeleteAlert(equipament);
+    const clientOnGroup = null
+    //await this.clientSVC.getWorkoutByEquipment(equipament.docId);
+    if(!clientOnGroup){
+      this.onDeleteAlert(client);
     }else{
-      this.onEquipmentExistsAlert(equipament);
+      this.onClientExistsAlert(client);
     }
   }catch (error) {
     console.error(error);
@@ -146,7 +140,6 @@ async onDeleteEquipment(equipament:any){
 
 
 }
-*/
 
   ngOnInit() {
   }

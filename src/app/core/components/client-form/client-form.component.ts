@@ -104,6 +104,9 @@ export class ClientFormComponent implements OnInit {
       for (const control of controls) {
         this.form.addControl(control.ID, this.fb.control(''));
       }
+
+      this.form.addControl('photo', this.fb.control(''));
+      this.form.addControl('pictureFile', this.fb.control(null));
       this.mode = "New"
     }
     
@@ -113,7 +116,7 @@ export class ClientFormComponent implements OnInit {
     var item:PhotoItem = await this.photoSvc.getPicture(mode, fileLoader);
     this.currentImage.next(item.base64);
     this.cdr.detectChanges();
-    this.form.controls['photo'].setValue(item.blob);
+    this.form.controls['pictureFile'].setValue(item.blob);
   }
 
   onDismiss(){
