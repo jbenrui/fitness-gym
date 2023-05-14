@@ -9,6 +9,7 @@ import cli from '@angular/cli';
   providedIn: 'root'
 })
 export class ClientSvcService {
+  
   private _clientSubject:BehaviorSubject<clientGym[]> = new BehaviorSubject([]);
   public client = this._clientSubject.asObservable();
 
@@ -88,8 +89,8 @@ export class ClientSvcService {
       phone:client.phone,
       inscription:client.inscription
     };
-    if(client['pictureFile']){
-      var response:FileUploaded = await this.uploadImage(client['pictureFile']);
+    if(client['photo']){
+      var response:FileUploaded = await this.uploadImage(client['photo']);
       _client['photo'] = response.file;
     }
     try {
@@ -111,8 +112,8 @@ export class ClientSvcService {
       phone:client.phone,
       inscription:client.inscription
     };
-    if(client['pictureFile']){
-      var response:FileUploaded = await this.uploadImage(client['pictureFile']);
+    if(client['photo']){
+      var response:FileUploaded = await this.uploadImage(client['photo']);
       _client['photo'] = response.file;
     }
     try {

@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
 import { HomePage } from '../pages/home/home.page';
 import { ClientTableComponent } from './components/client-table/client-table.component';
 import { ClientHeaderTableComponent } from './components/client-header-table/client-header-table.component';
+import { ClientFormComponent } from './components/client-form/client-form.component';
 
 registerLocaleData(en);
 registerLocaleData(es);
@@ -55,14 +56,16 @@ registerLocaleData(es);
     ConfigUserComponent,
     EditUserFormComponent,
     ClientTableComponent,
-    ClientHeaderTableComponent
+    ClientHeaderTableComponent,
+    ClientFormComponent
   ],
   declarations:[
     DateSelectableComponent,
     ConfigUserComponent,
     EditUserFormComponent,
     ClientTableComponent,
-    ClientHeaderTableComponent
+    ClientHeaderTableComponent,
+    ClientFormComponent
   ]
 
 })

@@ -8,9 +8,13 @@ import { clientGym } from '../../models/client_model_gym';
 })
 export class ClientTableComponent implements OnInit {
 
-  @Input() client:clientGym;
-  constructor() { }
+  @Input() client!:clientGym;
+  constructor() { 
+    
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.client)
+  }
 
 }

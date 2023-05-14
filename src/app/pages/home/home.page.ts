@@ -6,6 +6,9 @@ import { clientGym } from 'src/app/core/models/client_model_gym';
 import { ClientSvcService } from 'src/app/core/services/client-svc.service';
 import { lastValueFrom } from 'rxjs';
 import { UserSVC } from 'src/app/core/services/user.service';
+import { HttpClient } from '@angular/common/http';
+import { ConfigClient } from 'src/app/core/models/jsonModels/configClient.model';
+import { ConfigClientForm } from 'src/app/core/models/jsonModels/configClientForm.model';
 
 @Component({
   selector: 'app-home',
@@ -14,14 +17,26 @@ import { UserSVC } from 'src/app/core/services/user.service';
 })
 export class HomePage implements OnInit {
 
-
+  public jsonTableBody:ConfigClient;
+  public jsonFormClient:ConfigClientForm;
 
   constructor(
     protected clientSVC:ClientSvcService,
     private modal:ModalController,
+    private http:HttpClient,
     private alert:AlertController,
     private translate:TranslateService
   ) {
+
+    this.http.get('assets/json/client-table.json').subscribe((jsonTableBody:ConfigClient) => {
+      this.jsonTableBody = jsonTableBody; 
+      
+    });
+
+    this.http.get('assets/json/form-client.json').subscribe((jsonFormClient:ConfigClientForm) => {
+      this.jsonFormClient = jsonFormClient;  
+
+    })
     
    }
 
@@ -29,20 +44,23 @@ export class HomePage implements OnInit {
     const modal = await this.modal.create({
         component:ClientFormComponent,
         componentProps:{
-          client:client
+          client:client,
+          jsonFormClient:this.jsonFormClient
         },
+        
         cssClass:"modal-full-right-side"
     });
+    
     modal.present();
     modal.onDidDismiss().then(result=>{
       if(result && result.data){
         switch(result.data.mode){
           case 'New':
-            this.clientSVC.addClient(result.data.equipament);
+            this.clientSVC.addClient(result.data.client);
             break;
           case 'Edit':
             console.log((result.data as clientGym).docId)
-            this.clientSVC.updateClient(result.data.equipament);
+            this.clientSVC.updateClient(result.data.client);
             break;
           default:
         }
@@ -57,6 +75,11 @@ onUpdateEquipment(client:clientGym){
   console.log("page:" + client.docId)
   this.clientForm(client);
 } 
+
+getClientList() {
+    return this.clientSVC.client;
+}
+
 
 /*
 async onDeleteAlert(client:any){
