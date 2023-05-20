@@ -1,7 +1,9 @@
-import { Component, forwardRef, OnInit } from '@angular/core';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IonAccordionGroup, IonDatetime } from '@ionic/angular';
 import * as moment from 'moment';
+import { BehaviorSubject } from 'rxjs';
+import { LocaleService } from '../../services/local.service';
 
 export const USER_PROFILE_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -17,54 +19,74 @@ export const USER_PROFILE_VALUE_ACCESSOR: any = {
 })
 export class DateSelectableComponent implements OnInit {
 
-  private moment:any = moment;
+  hasValue = false;
 
-  selectedDateTime:string="";
+  @Input() atributeName:string = "";
 
-  propagateChage = (_:any) => {} //Propaga los cambios al componente padre.
+  constructor(
+    private translateData:LocaleService
+  ) { }
+
+  ngOnDestroy(): void {
+    this.dateSubject.complete()
+  }
+
+  private dateSubject = new BehaviorSubject(this.formatDate(moment()))
+  public date$ = this.dateSubject.asObservable();
+  propagateChange = (_: any) => { }
 
   isDisabled:boolean = false;
 
-  constructor() { 
-    this.selectedDateTime=this.moment().toISOString;
+  formatDate(date:moment.Moment){
+    return date.format('YYYY-MM-DDTHH:mmZ');
   }
-  
-  registerOnTouched(fn: any): void {
-    
-  }
-  
+
   ngOnInit() {}
 
-  writeValue(obj:any): void{
-    this.selectedDateTime = obj;
+  writeValue(obj: any): void {
+    if(obj){
+      this.hasValue = true;
+      this.dateSubject.next(this.formatDate(moment(obj)));
+    }
   }
 
-  registerOnChange(fn: any): void{
-    this.propagateChage = fn;
+  registerOnChange(fn: any): void {
+    this.propagateChange = fn;
   }
 
-  setDisableState?(isDisabled:boolean){
+  registerOnTouched(fn: any): void {
+  }
+
+  setDisabledState?(isDisabled: boolean): void {
     this.isDisabled = isDisabled;
   }
 
-  getTime(){
-    return this.selectedDateTime;
-
-  }
-
   onDateTimeChanged(event:any, accordion:IonAccordionGroup){
-    this.selectedDateTime = event.detail.value;
-    accordion.value=[''];
-    this.propagateChage(this.selectedDateTime);
+    setTimeout(() => {
+
+      var value = this.formatDate(moment(event.detail.value));
+      
+      this.dateSubject.next(value);
+
+      accordion.value = '';
+      this.propagateChange(value);
+
+    }, 100);
   }
 
-  onCancel(datetime:IonDatetime, accordion:any){
+  onCancel(datetime:IonDatetime, accordion:IonAccordionGroup){
     datetime.cancel();
-    accordion.value = [''];
+    accordion.value='';
   }
-  onConfirm(datetime:IonDatetime){
+
+  onConfirm(datetime:IonDatetime, accordion:IonAccordionGroup){
     datetime.confirm();
+    accordion.value = '';
+    this.hasValue = true;
+  }
+
+  getLocale(): string {
+    return this.translateData.locale;
   }
 
 }
-

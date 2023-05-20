@@ -11,7 +11,9 @@ export class FormatDatePipe implements PipeTransform {
       // Manejar caso de fecha inválida
       return 'Fecha inválida';
     } else {
-      return new DatePipe('es-es').transform(date, 'short');
+      const formattedDate = new DatePipe('es-es').transform(date, 'dd/MM/yyyy');
+      return formattedDate.split(',')[0];
     }
   }
 }
+

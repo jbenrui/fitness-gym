@@ -112,7 +112,7 @@ export class ClientSvcService {
       phone:client.phone,
       inscription:client.inscription
     };
-    if(client['photo']){
+    if(client['pictureFile']){
       var response:FileUploaded = await this.uploadImage(client['photo']);
       _client['photo'] = response.file;
     }

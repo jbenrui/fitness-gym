@@ -20,15 +20,20 @@
     <ion-button *ngIf="(platform.isNative$ | async)" expand="full" fill="clear" id="picture-button"> {{'btn_common.btn_change_picture' | translate}}</ion-button>
     <ion-button *ngIf="!(platform.isNative$ | async)" expand="full" fill="clear" (click)="changePic(fileLoader, 'file')">{{'btn_common.btn_change_picture' | translate}}</ion-button>
     <ng-container *ngFor="let control of jsonFormClient?.config || []; let i = index;" >
-      <ion-item *ngIf="getHeaders()[i] === 'Birthdate'" lines="none">
-        <ion-label class="label">{{getHeaders()[i]}}: </ion-label>
-        <ion-input [formControlName]="control.ID"></ion-input>
+      <ion-item [ngSwitch]="getHeaders()[i]">
+        <ng-container *ngSwitchCase="'Birthdate'">
+          <ion-label class="label">{{ getHeaders()[i] }}:</ion-label>
+          <app-date-selectable [formControlName]="control.ID"></app-date-selectable>
+        </ng-container>
+        <ng-container *ngSwitchCase="'Fecha de nacimiento'">
+          <ion-label class="label">{{ getHeaders()[i] }}:</ion-label>
+          <app-date-selectable [formControlName]="control.ID"></app-date-selectable>
+        </ng-container>
+        <ng-container *ngSwitchDefault>
+          <ion-label class="label">{{getHeaders()[i]}}:</ion-label>
+          <ion-input [formControlName]="control.ID"></ion-input>
+        </ng-container>
       </ion-item>
-      <ion-item *ngIf="getHeaders()[i] !== 'Birthdate'" lines="none">
-        <ion-label class="label">{{getHeaders()[i]}}:</ion-label>
-        <ion-input [formControlName]="control.ID"></ion-input>
-      </ion-item>
-      
     </ng-container>    
 
     <div id="changePic">

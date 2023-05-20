@@ -59,7 +59,6 @@ export class HomePage implements OnInit {
             this.clientSVC.addClient(result.data.client);
             break;
           case 'Edit':
-            console.log((result.data as clientGym).docId)
             this.clientSVC.updateClient(result.data.client);
             break;
           default:
