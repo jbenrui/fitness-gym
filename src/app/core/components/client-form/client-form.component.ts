@@ -43,7 +43,10 @@ export class ClientFormComponent implements OnInit {
     private photoSvc:PhotoService,
     private cdr: ChangeDetectorRef
   ) {
-    this.form = this.fb.group({});
+    this.form = this.fb.group({
+
+      pictureFile:[null]
+    });
 
    }
 
@@ -116,7 +119,6 @@ export class ClientFormComponent implements OnInit {
     this.currentImage.next(item.base64);
     this.cdr.detectChanges();
     this.form.controls['pictureFile'].setValue(item.blob);
-    
   }
 
   onDismiss(){

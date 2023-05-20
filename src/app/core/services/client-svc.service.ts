@@ -90,7 +90,7 @@ export class ClientSvcService {
       inscription:client.inscription
     };
     if(client['pictureFile']){
-      var response:FileUploaded = await this.uploadImage(client['photo']);
+      var response:FileUploaded = await this.uploadImage(client['pictureFile']);
       _client['photo'] = response.file;
     }
     try {
@@ -112,8 +112,8 @@ export class ClientSvcService {
       phone:client.phone,
       inscription:client.inscription
     };
-    if(client['pictureFile']){
-      var response:FileUploaded = await this.uploadImage(client['photo']);
+    if (client['pictureFile'] !== null && client['pictureFile'] !== undefined) {
+      var response:FileUploaded = await this.uploadImage(client['pictureFile']);
       _client['photo'] = response.file;
     }
     try {
