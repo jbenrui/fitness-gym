@@ -9,6 +9,7 @@ import { UserSVC } from 'src/app/core/services/user.service';
 import { HttpClient } from '@angular/common/http';
 import { ConfigClient } from 'src/app/core/models/jsonModels/configClient.model';
 import { ConfigClientForm } from 'src/app/core/models/jsonModels/configClientForm.model';
+import { ClientDetailComponent } from 'src/app/core/components/client-detail/client-detail.component';
 
 @Component({
   selector: 'app-home',
@@ -67,12 +68,31 @@ export class HomePage implements OnInit {
     });
 }
 
+async clientDetail (client:clientGym|null|undefined){
+  const modal = await this.modal.create({
+      component:ClientDetailComponent,
+      componentProps:{
+        client:client,
+        jsonFormClient:this.jsonFormClient
+      },
+      
+      cssClass:"modal-full-right-side"
+  });
+  
+  modal.present();
+  modal.onDidDismiss();
+}
+
 onAddClient(){
   this.clientForm(null);
 }
 onUpdateClient(client:clientGym){
   this.clientForm(client);
 } 
+
+onDetailClient(client:clientGym){
+  this.clientDetail(client);
+}
 
 getClientList() {
     return this.clientSVC.client;

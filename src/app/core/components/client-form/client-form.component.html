@@ -29,6 +29,14 @@
           <ion-label class="label">{{ getHeaders()[i] }}:</ion-label>
           <app-date-selectable [formControlName]="control.ID"></app-date-selectable>
         </ng-container>
+        <ng-container *ngSwitchCase="'Inscription'">
+          <ion-label class="label">{{ getHeaders()[i] }}:</ion-label>
+          <app-date-selectable [formControlName]="control.ID"></app-date-selectable>
+        </ng-container>
+        <ng-container *ngSwitchCase="'Inscripción'">
+          <ion-label class="label">{{ getHeaders()[i] }}:</ion-label>
+          <app-date-selectable [formControlName]="control.ID"></app-date-selectable>
+        </ng-container>
         <ng-container *ngSwitchDefault>
           <ion-label class="label">{{getHeaders()[i]}}:</ion-label>
           <ion-input [formControlName]="control.ID"></ion-input>

@@ -46,7 +46,7 @@
             "ID": "inscription",
             "LabelEN": "Inscription",
             "LabelES": "Inscripción",
-            "Type": "string",
+            "Type": "Inscription",
             "Value": ""
         }
     ]

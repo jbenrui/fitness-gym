@@ -103,14 +103,14 @@ export class UserSVC {
       phone: user.phone,
       dni: user.dni,
     };
-    if (user['photo']) {
-      console.log("pictureFIle: "+user['photo'])
-      var response: FileUploaded = await this.uploadImage(user['photo']);
+    if (user['pictureFile']) {
+      var response: FileUploaded = await this.uploadImage(user['pictureFile']);
       _user['photo'] = response.file;
     }
     try {
       await this.firebase.updateDocument('usuarios', user.uid, _user);
-
+      window.location.reload();
+      this.router.navigate(['config-user']);
     } catch (error) {
       console.log(error);
     }

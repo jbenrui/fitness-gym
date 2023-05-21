@@ -46,7 +46,9 @@ export class EditUserFormComponent implements OnInit {
     private photoSvc:PhotoService,
     private cdr: ChangeDetectorRef
   ) {
-    this.form = this.fb.group({});
+    this.form = this.fb.group({
+      pictureFile:[null]
+    });
     
    }
 
@@ -104,7 +106,7 @@ export class EditUserFormComponent implements OnInit {
     var item:PhotoItem = await this.photoSvc.getPicture(mode, fileLoader);
     this.currentImage.next(item.base64);
     this.cdr.detectChanges();
-    this.form.controls['photo'].setValue(item.blob);
+    this.form.controls['pictureFile'].setValue(item.blob);
   }
 
   onDismiss(){

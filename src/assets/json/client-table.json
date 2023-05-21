@@ -25,7 +25,14 @@
             "ID": "inscription",
             "LabelEN": "Inscription",
             "LabelES": "Inscripción",
-            "Type": "string",
+            "Type": "Inscription",
+            "Value": ""
+        },
+        {
+            "ID": "actions",
+            "LabelEN": "Actions",
+            "LabelES": "Acciones",
+            "Type": "Action",
             "Value": ""
         }
     ]

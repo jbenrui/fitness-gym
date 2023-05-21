@@ -45,7 +45,7 @@ export class ClientFormComponent implements OnInit {
   ) {
     this.form = this.fb.group({
 
-      pictureFile:[null]
+      pictureFile:[null],
     });
 
    }
