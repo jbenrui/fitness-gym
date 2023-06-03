@@ -39,7 +39,7 @@ export class ClientSvcService {
     }
   }
 
-  getEquipmentById(id:string):Promise<clientGym | undefined>{
+  getClientById(id:string):Promise<clientGym | undefined>{
     return new Promise<clientGym>(async (resolve,reject) => {
       try{
         var client = (await this.firebase.getDocument('clientes',id));

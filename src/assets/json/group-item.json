@@ -1,0 +1,25 @@
+{
+    "config": [
+        {
+            "ID": "name",
+            "LabelEN": "Name",
+            "LabelES": "Nombre",
+            "Type": "string",
+            "Value": ""
+        },
+        {
+            "ID": "description",
+            "LabelEN": "Description",
+            "LabelES": "Descripción",
+            "Type": "string",
+            "Value": ""
+        },
+        {
+            "ID": "photo",
+            "LabelEN": "Photo",
+            "LabelES": "Foto",
+            "Type": "string",
+            "Value": ""
+        }
+    ]
+}

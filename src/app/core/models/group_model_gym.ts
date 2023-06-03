@@ -1,8 +1,11 @@
+import { clientGym } from "./client_model_gym";
 
-export interface Group {
-    idgroup:string,
+export interface groupGym {
+    id:number,
+    docId:string,
     name:string,
     description:string,
     photo:string,
-    idmonitor:string
+    clients:clientGym[];
+    docMonitor:string
 }

@@ -22,6 +22,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/config-user/config-user.module').then( m => m.ConfigUserPageModule),
     canActivate:[AuthGuard]
   },
+  {
+    path: 'groups',
+    loadChildren: () => import('./pages/groups/groups.module').then( m => m.GroupsPageModule)
+  },
+
 
 
 
