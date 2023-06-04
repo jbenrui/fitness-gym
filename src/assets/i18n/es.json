@@ -17,6 +17,12 @@
             "lbl_dni":"DNI"
         }
     },
+    "groups":{
+        "lbl_tittle":"Grupos",
+        "btns":{
+            "btn_edit":"Editar"
+        }
+    },
     "config":{
         "lbl_tittle":"Perfil",
         "profile":{

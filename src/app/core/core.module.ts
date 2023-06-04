@@ -18,6 +18,8 @@ import { ClientTableComponent } from './components/client-table/client-table.com
 import { ClientHeaderTableComponent } from './components/client-header-table/client-header-table.component';
 import { ClientFormComponent } from './components/client-form/client-form.component';
 import { ClientDetailComponent } from './components/client-detail/client-detail.component';
+import { GroupComponent } from './components/group/group.component';
+import { GroupFormComponent } from './components/group-form/group-form.component';
 
 registerLocaleData(en);
 registerLocaleData(es);
@@ -59,7 +61,9 @@ registerLocaleData(es);
     ClientTableComponent,
     ClientHeaderTableComponent,
     ClientFormComponent,
-    ClientDetailComponent
+    ClientDetailComponent,
+    GroupComponent,
+    GroupFormComponent
   ],
   declarations:[
     DateSelectableComponent,
@@ -68,7 +72,9 @@ registerLocaleData(es);
     ClientTableComponent,
     ClientHeaderTableComponent,
     ClientFormComponent,
-    ClientDetailComponent
+    ClientDetailComponent,
+    GroupComponent,
+    GroupFormComponent
   ]
 
 })

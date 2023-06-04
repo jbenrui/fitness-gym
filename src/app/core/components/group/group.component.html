@@ -1,3 +1,28 @@
-<p>
-  group works!
-</p>
+<ion-card>
+  <ion-card-header>
+    <img *ngIf="!group?.photo" src="https://ionicframework.com/docs/img/demos/avatar.svg">
+    <img *ngIf="group?.photo" src="{{group?.photo}}">
+
+  </ion-card-header>
+
+  <ion-card-content>
+    <ng-container *ngFor="let attribute of getAttributes(); let i = index;">
+      <ion-item [ngSwitch]="getHeaders()[i]">
+        <ion-card-title *ngSwitchCase="'Name'">
+          {{ getHeaders()[i] }}: {{ group[attribute] }}
+        </ion-card-title>
+        <ion-card-title *ngSwitchCase="'Nombre'">
+          {{ getHeaders()[i] }}: {{ group[attribute] }}
+        </ion-card-title>
+        <ion-card-subtitle *ngSwitchCase="'Description'">
+          {{ getHeaders()[i] }}: {{ group[attribute] }}
+        </ion-card-subtitle>
+        <ion-card-subtitle *ngSwitchCase="'Descripcion'">
+          {{ getHeaders()[i] }}: {{ group[attribute] }}
+        </ion-card-subtitle>
+      </ion-item>
+    </ng-container>
+    <ion-button color ="success"(click)="onUpdateClick()"><ion-icon name="create-outline"></ion-icon></ion-button>
+    <ion-button color ="danger" (click)="onDeleteClick()"><ion-icon name="trash-outline"></ion-icon></ion-button>
+  </ion-card-content>
+</ion-card>

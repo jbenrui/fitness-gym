@@ -24,7 +24,8 @@ const routes: Routes = [
   },
   {
     path: 'groups',
-    loadChildren: () => import('./pages/groups/groups.module').then( m => m.GroupsPageModule)
+    loadChildren: () => import('./pages/groups/groups.module').then( m => m.GroupsPageModule),
+    canActivate:[AuthGuard]
   },
 
 

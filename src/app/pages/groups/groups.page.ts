@@ -1,4 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AlertController, ModalController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
+import { GroupFormComponent } from 'src/app/core/components/group-form/group-form.component';
+import { groupGym } from 'src/app/core/models/group_model_gym';
+import { ConfigGroup} from 'src/app/core/models/jsonModels/configGroup.model';
+import { lastValueFrom } from 'rxjs';
+import { ConfigGroupForm } from 'src/app/core/models/jsonModels/configGroupForm.model';
+import { GroupSvcService } from 'src/app/core/services/group-svc.service';
 
 @Component({
   selector: 'app-groups',
@@ -7,9 +16,106 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GroupsPage implements OnInit {
 
-  constructor() { }
+  public jsonCardBody:ConfigGroup;
+  public jsonFormGroup:ConfigGroupForm; 
+
+  constructor(
+    protected groupSVC:GroupSvcService,
+    private modal:ModalController,
+    private http:HttpClient,
+    private alert:AlertController,
+    private translate:TranslateService
+  ) { }
 
   ngOnInit() {
+    this.http.get('assets/json/group-item.json').subscribe((jsonCardBody:ConfigGroup) => {
+      this.jsonCardBody = jsonCardBody; 
+    });
+
+    this.http.get('assets/json/group-form.json').subscribe((jsonFormGroup:ConfigGroupForm) => {
+      this.jsonFormGroup = jsonFormGroup; 
+    });
+
+  }
+
+  async groupForm (group:groupGym|null|undefined){
+    const modal = await this.modal.create({
+        component:GroupFormComponent,
+        componentProps:{
+          group:group,
+          jsonFormGroup:this.jsonFormGroup
+        },
+        
+        cssClass:"modal-full-right-side"
+    });
+    
+    modal.present();
+    modal.onDidDismiss().then(result=>{
+      if(result && result.data){
+        switch(result.data.mode){
+          case 'New':
+            this.groupSVC.addGroup(result.data.client);
+            break;
+          case 'Edit':
+            this.groupSVC.updateGroup(result.data.client);
+            break;
+          default:
+        }
+      }
+    });
+  }
+
+  getGroupList() {
+    return this.groupSVC.group;
+  }
+
+
+  onAddGroup(){
+    this.groupForm(null);
+  }
+
+  onUpdateGroup(group:groupGym){
+    this.groupForm(group);
+  } 
+
+
+  async onDeleteAlert(group:any){
+    const alert = await this.alert.create({
+      header: await lastValueFrom(this.translate.get('general.warning')),
+      buttons: [
+        {
+          text: await lastValueFrom(this.translate.get('general.btn_cancel')),
+          role: 'cancel',
+          handler: () => {
+            console.log("Operacion cancelada");
+          },
+        },
+        {
+          text: await lastValueFrom(this.translate.get('general.btn_delete')),
+          role: 'confirm',
+          handler: () => {
+              this.groupSVC.deleteGroup(group);
+            
+          },
+        },
+      ],
+    });
+  
+    await alert.present();
+  
+    const { role } = await alert.onDidDismiss();
+  }
+  
+  async onDeleteGroup(client:any){
+    try{
+      const clientOnGroup = null
+      //await this.clientSVC.getWorkoutByEquipment(equipament.docId);
+      if(!clientOnGroup){
+        this.onDeleteAlert(client);
+      }
+    }catch (error) {
+      console.error(error);
+    }
   }
 
 }

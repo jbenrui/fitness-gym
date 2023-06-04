@@ -1,0 +1,43 @@
+ion-img{
+    width:60px;
+}
+
+/* Estilos para pantallas inferiores a 600px */
+@media (max-width: 600px) {
+    .img-user{
+        padding-top: 20px;
+        width: 300px;
+        margin: auto;
+        padding-right: 20px;
+    }
+  }
+
+/* Estilos para pantallas superiores a 600px */
+@media (min-width: 600px) {
+    .img-user{
+      padding-top: 20px;
+      width: 400px;
+      margin: auto;
+      padding-right: 20px;
+    }
+}
+
+/* Estilos para pantallas inferiores a 400px */
+@media (max-width: 400px) {
+    .img-user{
+      padding-top: 20px;
+      width: 290px;
+      margin: auto;
+      padding-right: 20px;
+    }
+}
+
+/* Estilos para pantallas inferiores a 380px */
+@media (max-width: 395px) {
+    .img-user{
+        padding-top: 20px;
+        width: 220px;
+        margin: auto;
+        padding-right: 20px;
+    }
+}

@@ -10,14 +10,7 @@
         {
             "ID": "description",
             "LabelEN": "Description",
-            "LabelES": "Descripción",
-            "Type": "string",
-            "Value": ""
-        },
-        {
-            "ID": "photo",
-            "LabelEN": "Photo",
-            "LabelES": "Foto",
+            "LabelES": "Descripcion",
             "Type": "string",
             "Value": ""
         }

@@ -19,16 +19,8 @@
     <input id="fileLoader" type="file" #fileLoader name="files" title="Load Files" hidden>
     <ion-button *ngIf="(platform.isNative$ | async)" expand="full" fill="clear" id="picture-button"> {{'btn_common.btn_change_picture' | translate}}</ion-button>
     <ion-button *ngIf="!(platform.isNative$ | async)" expand="full" fill="clear" (click)="changePic(fileLoader, 'file')">{{'btn_common.btn_change_picture' | translate}}</ion-button>
-    <ng-container *ngFor="let control of jsonFormClient?.config || []; let i = index;" >
+    <ng-container *ngFor="let control of jsonFormGroup?.config || []; let i = index;" >
       <ion-item [ngSwitch]="getHeaders()[i]">
-        <ng-container *ngSwitchCase="'Birthdate'">
-          <ion-label class="label">{{ getHeaders()[i] }}:</ion-label>
-          <app-date-selectable [formControlName]="control.ID"></app-date-selectable>
-        </ng-container>
-        <ng-container *ngSwitchCase="'Fecha de nacimiento'">
-          <ion-label class="label">{{ getHeaders()[i] }}:</ion-label>
-          <app-date-selectable [formControlName]="control.ID"></app-date-selectable>
-        </ng-container>
         <ng-container *ngSwitchCase="'Inscription'">
           <ion-label class="label">{{ getHeaders()[i] }}:</ion-label>
           <app-date-selectable [formControlName]="control.ID"></app-date-selectable>

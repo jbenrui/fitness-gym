@@ -18,11 +18,17 @@
         }
         
     },
+    "groups":{
+        "lbl_tittle":"Groups",
+        "btns":{
+            "btn_edit":"Edit",
+            "btn_logout":"Logout"
+        }
+    },
     "config":{
         "lbl_tittle":"Profile",
         "profile":{
-            "btn_edit":"Edit",
-            "btn_logout":"Logout"
+            "btn_edit":"Edit"
         }
     },
     "btn_common":{

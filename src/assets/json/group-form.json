@@ -1,0 +1,33 @@
+{
+    "config": [
+      {
+        "ID": "name",
+        "LabelEN": "Name",
+        "LabelES": "Nombre",
+        "Type": "string",
+        "Value": ""
+      },
+      {
+        "ID": "description",
+        "LabelEN": "Description",
+        "LabelES": "Descripción",
+        "Type": "string",
+        "Value": ""
+      },
+      {
+        "ID": "clients",
+        "LabelEN": "Clients",
+        "LabelES": "Clientes",
+        "Type": "array",
+        "Value": []
+      },
+      {
+        "ID": "docMonitor",
+        "LabelEN": "Monitor Document",
+        "LabelES": "Documento del Monitor",
+        "Type": "string",
+        "Value": ""
+      }
+    ]
+  }
+  

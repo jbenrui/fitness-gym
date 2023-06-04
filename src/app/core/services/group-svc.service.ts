@@ -55,7 +55,7 @@ export class GroupSvcService {
     });
   }
 
-  async deleteClient(group:groupGym){
+  async deleteGroup(group:groupGym){
     await this.firebase.deleteDocument('grupos',group.docId);
   }
 
