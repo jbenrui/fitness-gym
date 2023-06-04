@@ -28,8 +28,10 @@
     "config":{
         "lbl_tittle":"Profile",
         "profile":{
-            "btn_edit":"Edit"
-        }
+            "btn_edit":"Edit",
+            "btn_logout":"Logout"
+        },
+        "lblselectabled":"Select one Monitor"
     },
     "btn_common":{
         "btn_change_picture":"Change Picture"

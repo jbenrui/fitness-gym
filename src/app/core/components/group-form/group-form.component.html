@@ -21,13 +21,13 @@
     <ion-button *ngIf="!(platform.isNative$ | async)" expand="full" fill="clear" (click)="changePic(fileLoader, 'file')">{{'btn_common.btn_change_picture' | translate}}</ion-button>
     <ng-container *ngFor="let control of jsonFormGroup?.config || []; let i = index;" >
       <ion-item [ngSwitch]="getHeaders()[i]">
-        <ng-container *ngSwitchCase="'Inscription'">
+        <ng-container *ngSwitchCase="'Monitor Document'">
           <ion-label class="label">{{ getHeaders()[i] }}:</ion-label>
-          <app-date-selectable [formControlName]="control.ID"></app-date-selectable>
+          <app-monitor-selectable [formControlName]="control.ID"></app-monitor-selectable>
         </ng-container>
-        <ng-container *ngSwitchCase="'Inscripción'">
+        <ng-container *ngSwitchCase="'Documento del Monitor'">
           <ion-label class="label">{{ getHeaders()[i] }}:</ion-label>
-          <app-date-selectable [formControlName]="control.ID"></app-date-selectable>
+          <app-monitor-selectable [formControlName]="control.ID"></app-monitor-selectable>
         </ng-container>
         <ng-container *ngSwitchDefault>
           <ion-label class="label">{{getHeaders()[i]}}:</ion-label>

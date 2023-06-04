@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ConfigGroupData } from '../../models/jsonModels/configGroup.model';
 import { TranslateService } from '@ngx-translate/core';
 import { groupGym } from '../../models/group_model_gym';
+import { UserSVC } from '../../services/user.service';
 
 export interface ConfigGroup {
   config: ConfigGroupData[]
@@ -51,9 +52,12 @@ export class GroupComponent implements OnInit {
 
   constructor(
     private translate : TranslateService,
+    private userSVC : UserSVC
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.group)
+  }
 
   /**
    * Get Header of Json Schema 
@@ -158,6 +162,10 @@ export class GroupComponent implements OnInit {
 
   onDeleteClick(){
     this.onDelete.emit(this.group);
+  }
+
+  getMonitorGroup(uid:string){
+    return this.userSVC.getUserById(uid);
   }
 
 }

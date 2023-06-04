@@ -1,0 +1,25 @@
+<ion-accordion-group [multiple]="true" #accordion>
+  <ion-accordion value="first">
+    <ion-item slot="header" color="light">
+      <ng-container *ngIf="selectedMonitor!=null">
+        <ion-avatar class="user">
+          <ion-img *ngIf="!selectedMonitor.photo" alt="Silhouette of a User's head" src="https://ionicframework.com/docs/img/demos/avatar.svg"></ion-img>
+          <ion-img *ngIf="selectedMonitor.photo" alt="User picture" [src]="selectedMonitor.photo" ></ion-img>
+        </ion-avatar>
+        <ion-label>{{selectedMonitor.first_name}}, {{selectedMonitor.last_name}}</ion-label>
+      </ng-container>
+      <ion-label *ngIf="!selectedMonitor">{{'config.lblselectabled' | translate}}</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <ion-list>
+        <ion-item *ngFor="let user of getUser()" button detail  (click)="onUserClicked(user, accordion)">
+          <ion-avatar class="user">
+            <ion-img *ngIf="!user.photo" alt="Silhouette of a User's head" src="https://ionicframework.com/docs/img/demos/avatar.svg"></ion-img>
+            <ion-img *ngIf="user.photo" alt="User picture" [src]="user.photo"></ion-img>
+          </ion-avatar>
+          <ion-label>{{user.first_name}}, {{user.last_name}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>

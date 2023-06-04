@@ -5,6 +5,7 @@ import { FileUploaded, FirebaseService } from './firebase/firebase-service';
 import { Router } from '@angular/router';
 import 'firebase/auth';
 import { DocumentData } from 'firebase/firestore';
+import { Monitor } from '../models/monitor_model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,18 +15,23 @@ export class UserSVC {
   private _isLogged = new BehaviorSubject<boolean>(false);
   public isLogged$ = this._isLogged.asObservable(); // Observable para la propiedad isLogged
 
+
+  private _monitorSubject:BehaviorSubject<Monitor[]> = new BehaviorSubject([]);
+  public _monitor$ = this._monitorSubject.asObservable();
+
   private _user = new BehaviorSubject<any>(null);
   public user$ = this._user.asObservable(); // Observable para la propiedad user
 
   public currentUser:User; // Objeto para almacenar el usuario actual
   unsubcr; // Variable para almacenar el resultado de la suscripción
-
+  unsubcr2;
   constructor(
     private firebase: FirebaseService, // Inyección de dependencia de FirebaseService
     private router: Router // Inyección de dependencia de Router
   ) { 
     this.init(); // Llamada al método init() en el constructor
     this.unsubcr = this.firebase.subscribeToCollection('usuarios',this._user,this.mapUser); // Suscripción a la colección 'usuarios' en Firebase y mapeo de los documentos recibidos con el método mapUser()
+    this.unsubcr2 = this.firebase.subscribeToCollection('usuarios',this._monitorSubject,this.mapUser);
   }
 
   /**
@@ -202,7 +208,7 @@ export class UserSVC {
    * @returns The user list as an observable
    */
   getUserList(){
-    return this._user.value;
+    return this._monitorSubject.value;
   }
 
   /**

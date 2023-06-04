@@ -20,6 +20,9 @@
         <ion-card-subtitle *ngSwitchCase="'Descripcion'">
           {{ getHeaders()[i] }}: {{ group[attribute] }}
         </ion-card-subtitle>
+        <ion-card-subtitle *ngSwitchCase="'Monitor'">
+          {{ getHeaders()[i] }}: {{ getMonitorGroup(group[attribute]) }}
+        </ion-card-subtitle>
       </ion-item>
     </ng-container>
     <ion-button color ="success"(click)="onUpdateClick()"><ion-icon name="create-outline"></ion-icon></ion-button>

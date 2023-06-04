@@ -13,6 +13,13 @@
             "LabelES": "Descripcion",
             "Type": "string",
             "Value": ""
-        }
+        },
+        {
+            "ID": "docMonitor",
+            "LabelEN": "Monitor",
+            "LabelES": "Monitor",
+            "Type": "string",
+            "Value": ""
+          }
     ]
 }

@@ -28,7 +28,8 @@
         "profile":{
             "btn_edit":"Editar",
             "btn_logout":"Cerrar Sesion"
-        }
+        },
+        "lblselectabled":"Selecciona un Monitor"
     },
     "btn_common":{
         "btn_change_picture":"Cambiar Foto"

@@ -106,12 +106,12 @@ export class GroupsPage implements OnInit {
     const { role } = await alert.onDidDismiss();
   }
   
-  async onDeleteGroup(client:any){
+  async onDeleteGroup(group:any){
     try{
-      const clientOnGroup = null
-      //await this.clientSVC.getWorkoutByEquipment(equipament.docId);
-      if(!clientOnGroup){
-        this.onDeleteAlert(client);
+      const OnGroup = null
+
+      if(!OnGroup){
+        this.onDeleteAlert(group);
       }
     }catch (error) {
       console.error(error);
