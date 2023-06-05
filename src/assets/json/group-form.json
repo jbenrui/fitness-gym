@@ -15,13 +15,6 @@
         "Value": ""
       },
       {
-        "ID": "clients",
-        "LabelEN": "Clients",
-        "LabelES": "Clientes",
-        "Type": "array",
-        "Value": []
-      },
-      {
         "ID": "docMonitor",
         "LabelEN": "Monitor Document",
         "LabelES": "Documento del Monitor",

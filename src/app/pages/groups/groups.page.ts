@@ -8,6 +8,8 @@ import { ConfigGroup} from 'src/app/core/models/jsonModels/configGroup.model';
 import { lastValueFrom } from 'rxjs';
 import { ConfigGroupForm } from 'src/app/core/models/jsonModels/configGroupForm.model';
 import { GroupSvcService } from 'src/app/core/services/group-svc.service';
+import { ClientListComponent } from 'src/app/core/components/client-list/client-list.component';
+import { ClientsInGroupComponent } from 'src/app/core/components/clients-in-group/clients-in-group.component';
 
 @Component({
   selector: 'app-groups',
@@ -65,6 +67,33 @@ export class GroupsPage implements OnInit {
     });
   }
 
+
+  async clientList (group:groupGym|null|undefined){
+    const modal = await this.modal.create({
+        component:ClientsInGroupComponent,
+        componentProps:{
+          group:group,
+        },
+        
+        cssClass:"modal-full-right-side"
+    });
+    
+    modal.present();
+    modal.onDidDismiss().then(result=>{
+      if(result && result.data){
+        switch(result.data.mode){
+          case 'New':
+            this.groupSVC.addGroup(result.data.client);
+            break;
+          case 'Edit':
+            this.groupSVC.updateGroup(result.data.client);
+            break;
+          default:
+        }
+      }
+    });
+  }
+
   getGroupList() {
     return this.groupSVC.group;
   }
@@ -76,6 +105,10 @@ export class GroupsPage implements OnInit {
 
   onUpdateGroup(group:groupGym){
     this.groupForm(group);
+  }
+
+  onDetailGroup(group:groupGym){
+    this.clientList(group);
   } 
 
 

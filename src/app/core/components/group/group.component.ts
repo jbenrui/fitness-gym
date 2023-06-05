@@ -17,11 +17,12 @@ export class GroupComponent implements OnInit {
 
 
     /**
-   * Output EventEmitter for update event
-   * Emits an event when the update button is clicked
+   * Output EventEmitter for events
+   * Emits an event when the buttons are clicked
    */
     @Output() onUpdate = new EventEmitter;
     @Output() onDelete = new EventEmitter;
+    @Output() onDetail = new EventEmitter;
     
   /**
    * Array to store header data for ConfigGroupData type
@@ -164,8 +165,13 @@ export class GroupComponent implements OnInit {
     this.onDelete.emit(this.group);
   }
 
+  onDetailClick(){
+    this.onDetail.emit(this.group);
+  }
+
   getMonitorGroup(uid:string){
-    return this.userSVC.getUserById(uid);
+    //return this.userSVC.getUserById(uid);
+    return uid
   }
 
 }

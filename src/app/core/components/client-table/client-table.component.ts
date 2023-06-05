@@ -14,8 +14,8 @@ export interface ConfigClient {
 })
 export class ClientTableComponent implements OnInit {
   /**
-   * Output EventEmitter for update event
-   * Emits an event when the update button is clicked
+   * Output EventEmitter for events
+   * Emits an event when the buttons are clicked
    */
   @Output() onUpdate = new EventEmitter;
   @Output() onDelete = new EventEmitter;

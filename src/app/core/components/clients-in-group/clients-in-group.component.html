@@ -1,0 +1,11 @@
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>{{group.clients}}</ion-label>
+      <ion-button color="danger" id="delete"(click)="onDeleteClick()"><ion-icon name="person-remove-outline"></ion-icon></ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end"  slot="fixed" >
+    <ion-fab-button color="tertiary" (click)="onAddGroup()"><ion-icon name="person-add-outline"></ion-icon></ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -9,7 +9,7 @@
   <ion-grid>
     <ion-row class="ion-align-items-center">
       <ion-col *ngFor="let group of getGroupList() | async" size="12" size-sm="6" size-lg="3" class="ion-align-self-center">
-        <app-group [jsonCardBody]="jsonCardBody" [group]="group" (onUpdate)="onUpdateGroup($event)" (onDelete)="onDeleteGroup($event)"></app-group>
+        <app-group [jsonCardBody]="jsonCardBody" [group]="group" (onUpdate)="onUpdateGroup($event)" (onDelete)="onDeleteGroup($event)" (onDetail)="onDetailGroup($event)"></app-group>
       </ion-col>
     </ion-row>
   </ion-grid>

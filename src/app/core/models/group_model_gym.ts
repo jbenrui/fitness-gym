@@ -6,6 +6,6 @@ export interface groupGym {
     name:string,
     description:string,
     photo:string,
-    clients:clientGym[];
+    clients:string[];
     docMonitor:string
 }
