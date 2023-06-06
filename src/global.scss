@@ -47,6 +47,11 @@ ion-avatar.person{
     margin-right:20px
 }
 
+:host .datetime-time {
+    display: none !important;
+    padding: 8px 16px;
+}
+
 .modal-full-right-side{
     display:flex;
     --height:100%;

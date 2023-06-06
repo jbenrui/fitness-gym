@@ -110,14 +110,8 @@ export class GroupSvcService {
     }
   }
 
-
   getGroupList(){
     return this._groupSubject.value
   }
 
-  
-  //Añadir un clientes al grupo
-
-  //Eleminar clientes del grupo
-  
 }
