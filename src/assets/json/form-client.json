@@ -43,6 +43,13 @@
             "Value": ""
         },
         {
+            "ID": "idgroup",
+            "LabelEN": "Group",
+            "LabelES": "Grupo",
+            "Type": "Group",
+            "Value": ""
+        },
+        {
             "ID": "inscription",
             "LabelEN": "Inscription",
             "LabelES": "Inscripción",

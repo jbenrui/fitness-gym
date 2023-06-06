@@ -12,7 +12,8 @@ export class ClientsInGroupComponent implements OnInit {
 
   @Input() group: groupGym;
 
-  constructor( private modal:ModalController) {
+  constructor( private modal:ModalController,
+    private modal2:ModalController) {
    
    }
 
@@ -24,7 +25,7 @@ export class ClientsInGroupComponent implements OnInit {
   }
   
   async clientList (group:groupGym|null|undefined){
-    const modal = await this.modal.create({
+    const modal = await this.modal2.create({
         component:ClientListComponent,
         componentProps:{
           group:group,

@@ -3,6 +3,9 @@ import { clientGym } from '../../models/client_model_gym';
 import { TranslateService } from '@ngx-translate/core';
 import { ConfigClientDataForm } from '../../models/jsonModels/configClientForm.model';
 import { ModalController } from '@ionic/angular';
+import { BehaviorSubject } from 'rxjs';
+import { groupGym } from '../../models/group_model_gym';
+import { GroupSvcService } from '../../services/group-svc.service';
 
 export interface ConfigClient {
   config: ConfigClientDataForm[]
@@ -14,10 +17,26 @@ export interface ConfigClient {
   styleUrls: ['./client-detail.component.scss'],
 })
 export class ClientDetailComponent implements OnInit {
-   /**
+
+  private _client:clientGym;
+  private group:BehaviorSubject<groupGym> = new BehaviorSubject<groupGym>(null);
+  public group$ = this.group.asObservable();
+  /**
     * Input property to receive Client data of type clientGym
     */
-   @Input() client!:clientGym;
+   @Input('client') set client(c:clientGym){
+    this._client = c;
+    if(c && c.idgroup)
+     this.getGroupbyId(c.idgroup).then((group) => {
+      this.group.next(group);
+     })
+   }
+
+   public get client(){
+    return this._client;
+   }
+
+
  
    /**
     * Array to store header data for ConfigClientData type
@@ -44,6 +63,7 @@ export class ClientDetailComponent implements OnInit {
    constructor(
      private translate : TranslateService,
      private modalController:ModalController,
+     private groupSVC:GroupSvcService
    ) { }
    
    ngOnInit() {}
@@ -143,6 +163,10 @@ export class ClientDetailComponent implements OnInit {
      return this.getType(this.typeArray);
    }
  
+   getGroupbyId(docId:string){
+    return this.groupSVC.getGroupById(docId)
+   }
+
    compareDatesWithOffset(): boolean {
      const inscriptionDate = new Date(this.client.inscription);
      const currentDate = new Date();

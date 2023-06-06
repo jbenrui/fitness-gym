@@ -23,7 +23,8 @@
         "btns":{
             "btn_edit":"Edit",
             "btn_logout":"Logout"
-        }
+        },
+        "lblselectabled":"Select one Group"
     },
     "config":{
         "lbl_tittle":"Profile",

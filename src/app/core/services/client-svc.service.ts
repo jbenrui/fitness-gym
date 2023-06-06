@@ -35,6 +35,7 @@ export class ClientSvcService {
       postal_code:doc['data']().postal_code,
       phone:doc['data']().phone,
       photo:doc['data']().photo,
+      idgroup:doc['data']().idgroup,
       inscription:doc['data']().inscription
     }
   }
@@ -53,6 +54,7 @@ export class ClientSvcService {
           postal_code:client.data.postal_code,
           phone:client.data.phone,
           photo:client.data.photo,
+          idgroup:client.data.idgroup,
           inscription:client.data.inscription
 
         });
@@ -87,6 +89,7 @@ export class ClientSvcService {
       birthdate:client.birthdate,
       postal_code:client.postal_code,
       phone:client.phone,
+      idgroup:client.idgroup,
       inscription:client.inscription
     };
     if(client['pictureFile']){
@@ -110,6 +113,7 @@ export class ClientSvcService {
       birthdate:client.birthdate,
       postal_code:client.postal_code,
       phone:client.phone,
+      idgroup:client.idgroup,
       inscription:client.inscription
     };
     if (client['pictureFile'] !== null && client['pictureFile'] !== undefined) {
@@ -121,6 +125,10 @@ export class ClientSvcService {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  getClientList(){
+    return this._clientSubject.value
   }
 
   

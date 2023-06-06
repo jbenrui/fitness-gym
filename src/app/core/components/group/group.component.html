@@ -7,7 +7,7 @@
 
   <ion-card-content>
     <ng-container *ngFor="let attribute of getAttributes(); let i = index;">
-      <ion-item [ngSwitch]="getHeaders()[i]">
+      <ion-item *ngIf="group" [ngSwitch]="getHeaders()[i]">
         <ion-card-title *ngSwitchCase="'Name'">
           {{ getHeaders()[i] }}: {{ group[attribute] }}
         </ion-card-title>
@@ -19,9 +19,9 @@
         </ion-card-subtitle>
         <ion-card-subtitle *ngSwitchCase="'Descripcion'">
           {{ getHeaders()[i] }}: {{ group[attribute] }}
-        </ion-card-subtitle>
+        </ion-card-subtitle>  
         <ion-card-subtitle *ngSwitchCase="'Monitor'">
-          {{ getHeaders()[i] }}: {{ getMonitorGroup(group[attribute]) }}
+          {{ getHeaders()[i] }}: {{ (monitor$ | async)!=null?((monitor$ | async).first_name):"" }}
         </ion-card-subtitle>
       </ion-item>
     </ng-container>

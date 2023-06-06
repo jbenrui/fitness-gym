@@ -2,28 +2,30 @@ import { Injectable } from '@angular/core';
 import { UserSVC } from './user.service';
 import { groupGym } from '../models/group_model_gym';
 import { GroupSvcService } from './group-svc.service';
+import { ClientSvcService } from './client-svc.service';
+import { BehaviorSubject } from 'rxjs';
+import { clientGym } from '../models/client_model_gym';
+import { FirebaseService } from './firebase/firebase-service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientsInGroupService {
 
+
+  private _clientInGroup:BehaviorSubject<clientGym[]> = new BehaviorSubject([]);
+  public clientInGroup = this._clientInGroup.asObservable();
+
+
+  unsubcr;
   constructor(
-    private userSVC: UserSVC,
-    private groupSVC: GroupSvcService
-  ) { }
+    private clientSVC: ClientSvcService,
+    private groupSVC: GroupSvcService,
+    private firebase:FirebaseService
+  ) { 
+    //this.unsubcr = this.firebase.subscribeToCollection('clientes',this._clientInGroup,this.mapClient)
 
-  async listClientsNotInGroup(group: groupGym): Promise<any[]> {
-    const allUsers = await this.userSVC.getUserList(); // Obtener todos los usuarios
-    const groupClients = group.clients; // Obtener los clientes del grupo
-
-    // Filtrar los usuarios que no están en el grupo
-    const clientsNotInGroup = allUsers.filter(user => !groupClients.includes(user.uid));
-
-    // Mapear los usuarios al formato deseado (solo mostrar el ID)
-    const clientsList = clientsNotInGroup.map(user => user.uid);
-
-    return clientsList;
   }
+
 }
 

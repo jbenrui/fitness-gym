@@ -9,6 +9,7 @@ export interface clientGym{
    postal_code:string,
    phone:string,
    photo:string,
+   idgroup:string,
    inscription:string,
 
 }

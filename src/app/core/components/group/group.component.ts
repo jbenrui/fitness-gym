@@ -3,6 +3,8 @@ import { ConfigGroupData } from '../../models/jsonModels/configGroup.model';
 import { TranslateService } from '@ngx-translate/core';
 import { groupGym } from '../../models/group_model_gym';
 import { UserSVC } from '../../services/user.service';
+import { BehaviorSubject } from 'rxjs';
+import { User } from '../../models/user_model_gym';
 
 export interface ConfigGroup {
   config: ConfigGroupData[]
@@ -37,12 +39,28 @@ export class GroupComponent implements OnInit {
   /**
    * Array to store type data for ConfigGroupData type
    */
-  typeArray: ConfigGroupData[] = [];
 
+  private _group:groupGym;
+  typeArray: ConfigGroupData[] = [];
+  private monitor:BehaviorSubject<User> = new BehaviorSubject<User>(null);
+  public monitor$ = this.monitor.asObservable();
   /**
    * Input property to receive group data of type groupGym
    */
-  @Input() group:groupGym
+  @Input('group') set group(g:groupGym){
+    this._group = g;
+    if(g && g.docMonitor)
+     this.getMonitorGroup(g.docMonitor).then((user)=>{
+        this.monitor.next(user);
+     })
+  }
+
+  public get group(){
+    return this._group;
+  }
+
+
+
 
   /**
    * Input property to receive jsonConfigGroup data of type ConfigGroup
@@ -58,6 +76,7 @@ export class GroupComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.group)
+   
   }
 
   /**
@@ -170,8 +189,7 @@ export class GroupComponent implements OnInit {
   }
 
   getMonitorGroup(uid:string){
-    //return this.userSVC.getUserById(uid);
-    return uid
+    return this.userSVC.getUserById(uid)
   }
 
-}
+} 

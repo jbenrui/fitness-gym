@@ -27,8 +27,11 @@
           Expiró la inscripción
         </ion-text> 
       </ion-label> 
-      <ion-label *ngIf="getTypes()[i] !== 'Date' && getTypes()[i] !== 'Inscription'" class="label">
+      <ion-label *ngIf="getTypes()[i] !== 'Date' && getTypes()[i] !== 'Inscription' && getTypes()[i] !== 'Group'" class="label">
         {{ client[attribute] }}
+      </ion-label>
+      <ion-label *ngIf="getTypes()[i] === 'Group'" class="label">
+        {{(group$ | async)!=null?((group$ | async ).name):""}}
       </ion-label>
     </ion-item>
   </ion-list>

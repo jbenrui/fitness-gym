@@ -23,6 +23,7 @@ import { GroupFormComponent } from './components/group-form/group-form.component
 import { MonitorSelectableComponent } from './components/monitor-selectable/monitor-selectable.component';
 import { ClientListComponent } from './components/client-list/client-list.component';
 import { ClientsInGroupComponent } from './components/clients-in-group/clients-in-group.component';
+import { GroupSelectableComponent } from './components/group-selectable/group-selectable.component';
 
 registerLocaleData(en);
 registerLocaleData(es);
@@ -69,7 +70,8 @@ registerLocaleData(es);
     GroupFormComponent,
     MonitorSelectableComponent,
     ClientListComponent,
-    ClientsInGroupComponent
+    ClientsInGroupComponent,
+    GroupSelectableComponent
   ],
   declarations:[
     DateSelectableComponent,
@@ -83,7 +85,8 @@ registerLocaleData(es);
     GroupFormComponent,
     MonitorSelectableComponent,
     ClientListComponent,
-    ClientsInGroupComponent
+    ClientsInGroupComponent,
+    GroupSelectableComponent
   ]
 
 })

@@ -19,7 +19,7 @@ export class ClientListComponent implements OnInit {
   }
 
   getClientsInNotGroup(){
-    return this.cigSVC.listClientsNotInGroup(this.group);
+    //return this.cigSVC.listClientsNotInGroup(this.group);
   }
 
 }
