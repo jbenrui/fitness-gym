@@ -160,8 +160,8 @@ export class ClientSvcService {
     return this._clientSubject.value
   }
 
-  deleteClientInGroup(client: clientGym): Promise<void> {
-    return new Promise<void>(async (resolve, reject) => {
+  deleteClientInGroup(client: clientGym): Promise<clientGym> {
+    return new Promise<clientGym>(async (resolve, reject) => {
       const _client = {
         id: 0,
         docId: client.docId,
@@ -187,7 +187,7 @@ export class ClientSvcService {
   
       try {
         await this.firebase.updateDocument('clientes', client.docId, _client);
-        resolve();
+        resolve(client);
       } catch (error) {
         reject(error);
       }

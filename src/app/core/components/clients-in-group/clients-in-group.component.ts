@@ -4,8 +4,10 @@ import { ModalController } from '@ionic/angular';
 import { ClientSvcService } from '../../services/client-svc.service';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { clientGym } from '../../models/client_model_gym';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { Subject, from } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { ChangeDetectorRef } from '@angular/core';
+
 
 @Component({
   selector: 'app-clients-in-group',
@@ -37,7 +39,8 @@ export class ClientsInGroupComponent implements OnInit {
 
   constructor(
     private clientSVC: ClientSvcService,
-    private modalController:ModalController)
+    private modalController:ModalController,
+    private changeDetectorRef: ChangeDetectorRef)
   {}
 
   ngOnInit(){}
@@ -52,11 +55,13 @@ export class ClientsInGroupComponent implements OnInit {
 
   onDeleteClick(client: clientGym) {
     this.clientSVC.deleteClientInGroup(client).then(() => {
-      const currentClients = this._clients.getValue();
+      const currentClients = this._clients.value;
       const updatedClients = currentClients.filter((c) => c.id !== client.id);
       this._clients.next(updatedClients);
+      this.changeDetectorRef.detectChanges();
     });
   }
+  
 
   
 }
