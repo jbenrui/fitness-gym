@@ -64,6 +64,35 @@ export class ClientSvcService {
     });
   }
 
+  getClientByIdGroup(idgroup: string): Promise<clientGym[]> {
+    return new Promise<clientGym[]>(async (resolve, reject) => {
+      try {
+        var clients = await this.firebase.getDocumentsBy('clientes', 'idgroup', idgroup);
+  
+        var clientData: clientGym[] = clients.map((client) => ({
+          id: 0,
+          docId: client.id,
+          name: client.data.name,
+          surname: client.data.surname,
+          email: client.data.email,
+          birthdate: client.data.birthdate,
+          postal_code: client.data.postal_code,
+          phone: client.data.phone,
+          photo: client.data.photo,
+          idgroup: client.data.idgroup,
+          inscription: client.data.inscription
+        }));
+  
+        resolve(clientData);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+  
+  
+  
+
   async deleteClient(client:clientGym){
     await this.firebase.deleteDocument('clientes',client.docId);
   }
@@ -130,6 +159,41 @@ export class ClientSvcService {
   getClientList(){
     return this._clientSubject.value
   }
+
+  deleteClientInGroup(client: clientGym): Promise<void> {
+    return new Promise<void>(async (resolve, reject) => {
+      const _client = {
+        id: 0,
+        docId: client.docId,
+        name: client.name,
+        surname: client.surname,
+        email: client.email,
+        birthdate: client.birthdate,
+        postal_code: client.postal_code,
+        phone: client.phone,
+        idgroup: null,
+        inscription: client.inscription
+      };
+  
+      if (client['pictureFile'] !== null && client['pictureFile'] !== undefined) {
+        try {
+          const response: FileUploaded = await this.uploadImage(client['pictureFile']);
+          _client['photo'] = response.file;
+        } catch (error) {
+          reject(error);
+          return;
+        }
+      }
+  
+      try {
+        await this.firebase.updateDocument('clientes', client.docId, _client);
+        resolve();
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+  
 
   
 }

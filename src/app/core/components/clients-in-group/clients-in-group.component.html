@@ -1,11 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-img class="header-img"slot="end" src="../../../../assets/logo/logo.png"></ion-img>
+    <ion-buttons slot="start">
+      <ion-button (click)="onDismiss()">X</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-label>{{group.clients}}</ion-label>
-      <ion-button color="danger" id="delete"(click)="onDeleteClick()"><ion-icon name="person-remove-outline"></ion-icon></ion-button>
-    </ion-item>
-  </ion-list>
-  <ion-fab vertical="bottom" horizontal="end"  slot="fixed" >
-    <ion-fab-button color="tertiary" (click)="onAddGroup()"><ion-icon name="person-add-outline"></ion-icon></ion-fab-button>
-  </ion-fab>
+  <ion-grid>
+    <ion-row *ngFor="let client of (clients$ | async)">
+      <ion-col>
+        <ng-container *ngIf="client?.photo">
+          <ion-avatar>
+            <ion-img [src]="client?.photo" ></ion-img>
+          </ion-avatar>
+        </ng-container>
+        <ng-container *ngIf="!client?.photo">
+          <ion-avatar>
+            <ion-img src="https://ionicframework.com/docs/img/demos/avatar.svg"></ion-img>
+          </ion-avatar>
+        </ng-container>
+      </ion-col>
+      <ion-col>
+        <ion-label class="ion-text-center label-center">{{client?.name}}</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label class="ion-text-center label-center">{{client?.surname}}</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-button color="danger" id="delete"(click)="onDeleteClick(client)"><ion-icon name="person-remove-outline"></ion-icon></ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+

@@ -219,7 +219,6 @@ export class UserSVC {
    * @returns A promise that resolves with the user object
    */
   getUserById(id: string): Promise<User>{
-    console.log("getUserById")
     return new Promise<User>(async (resolve, reject)=>{
       try {
         var user = await this.firebase.getDocument('usuarios', id);
