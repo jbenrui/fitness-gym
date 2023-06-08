@@ -21,7 +21,6 @@ import { ClientDetailComponent } from './components/client-detail/client-detail.
 import { GroupComponent } from './components/group/group.component';
 import { GroupFormComponent } from './components/group-form/group-form.component';
 import { MonitorSelectableComponent } from './components/monitor-selectable/monitor-selectable.component';
-import { ClientListComponent } from './components/client-list/client-list.component';
 import { ClientsInGroupComponent } from './components/clients-in-group/clients-in-group.component';
 import { GroupSelectableComponent } from './components/group-selectable/group-selectable.component';
 
@@ -69,7 +68,6 @@ registerLocaleData(es);
     GroupComponent,
     GroupFormComponent,
     MonitorSelectableComponent,
-    ClientListComponent,
     ClientsInGroupComponent,
     GroupSelectableComponent
   ],
@@ -84,7 +82,6 @@ registerLocaleData(es);
     GroupComponent,
     GroupFormComponent,
     MonitorSelectableComponent,
-    ClientListComponent,
     ClientsInGroupComponent,
     GroupSelectableComponent
   ]

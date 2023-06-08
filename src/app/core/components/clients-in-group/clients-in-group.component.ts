@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { groupGym } from '../../models/group_model_gym';
 import { ModalController } from '@ionic/angular';
-import { ClientListComponent } from '../client-list/client-list.component';
 import { ClientSvcService } from '../../services/client-svc.service';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { clientGym } from '../../models/client_model_gym';

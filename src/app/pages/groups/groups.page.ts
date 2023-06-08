@@ -8,7 +8,6 @@ import { ConfigGroup} from 'src/app/core/models/jsonModels/configGroup.model';
 import { lastValueFrom } from 'rxjs';
 import { ConfigGroupForm } from 'src/app/core/models/jsonModels/configGroupForm.model';
 import { GroupSvcService } from 'src/app/core/services/group-svc.service';
-import { ClientListComponent } from 'src/app/core/components/client-list/client-list.component';
 import { ClientsInGroupComponent } from 'src/app/core/components/clients-in-group/clients-in-group.component';
 
 @Component({
