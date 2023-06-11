@@ -28,6 +28,7 @@ export class ClientsInGroupComponent implements OnInit {
     this._group = g;
     if (g && g.docId) {
       this.getClientsByIdGroup(g.docId).then((clients) => {
+        this.group.clients = clients
         this._clients.next(clients);
       });
     }
@@ -54,14 +55,15 @@ export class ClientsInGroupComponent implements OnInit {
   }
 
   onDeleteClick(client: clientGym) {
-    this.clientSVC.deleteClientInGroup(client).then(() => {
-      const currentClients = this._clients.value;
-      const updatedClients = currentClients.filter((c) => c.id !== client.id);
-      this._clients.next(updatedClients);
-      this.changeDetectorRef.detectChanges();
-    });
+    
+
+    const index = this.group.clients.findIndex(c => c.docId === client.docId);
+    if (index > -1) {
+      this.group.clients.splice(index, 1); // Eliminar el cliente del array
+    }
+    
+    this.clientSVC.deleteClientInGroup(client)
   }
-  
 
   
 }

@@ -9,6 +9,8 @@ import { lastValueFrom } from 'rxjs';
 import { ConfigGroupForm } from 'src/app/core/models/jsonModels/configGroupForm.model';
 import { GroupSvcService } from 'src/app/core/services/group-svc.service';
 import { ClientsInGroupComponent } from 'src/app/core/components/clients-in-group/clients-in-group.component';
+import { clientGym } from 'src/app/core/models/client_model_gym';
+import { ClientSvcService } from 'src/app/core/services/client-svc.service';
 
 @Component({
   selector: 'app-groups',
@@ -25,7 +27,8 @@ export class GroupsPage implements OnInit {
     private modal:ModalController,
     private http:HttpClient,
     private alert:AlertController,
-    private translate:TranslateService
+    private translate:TranslateService,
+    private clientSVC:ClientSvcService,
   ) { }
 
   ngOnInit() {
@@ -137,13 +140,35 @@ export class GroupsPage implements OnInit {
   
     const { role } = await alert.onDidDismiss();
   }
+
+  async onGroupExistsAlert(group:any){
+    const alert = await this.alert.create({
+      header: 'Error',
+      message: await lastValueFrom(this.translate.get('general.exist')),
+      buttons: [
+        {
+          text: await lastValueFrom(this.translate.get('general.btn_close')),
+          role: 'close',
+          handler: () => {
+          },
+        },
+      ],
+    });
+  
+    await alert.present();
+  
+    const { role } = await alert.onDidDismiss();
+  }
   
   async onDeleteGroup(group:any){
     try{
-      const OnGroup = null
+      const OnGroup = this.clientSVC.getClientByIdGroup(group.docId)
+      
+      if ((await OnGroup).length === 0) {
 
-      if(!OnGroup){
         this.onDeleteAlert(group);
+      }else{
+        this.onGroupExistsAlert(group);
       }
     }catch (error) {
       console.error(error);

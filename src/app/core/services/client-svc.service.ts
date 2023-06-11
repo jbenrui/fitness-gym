@@ -89,9 +89,6 @@ export class ClientSvcService {
       }
     });
   }
-  
-  
-  
 
   async deleteClient(client:clientGym){
     await this.firebase.deleteDocument('clientes',client.docId);

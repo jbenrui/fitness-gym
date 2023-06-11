@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { groupGym } from '../models/group_model_gym';
 import { FileUploaded, FirebaseService } from './firebase/firebase-service';
 import { DocumentData } from 'firebase/firestore';
+import { clientGym } from '../models/client_model_gym';
 
 @Injectable({
   providedIn: 'root'
@@ -56,7 +57,7 @@ export class GroupSvcService {
   }
 
   async deleteGroup(group:groupGym){
-    await this.firebase.deleteDocument('grupos',group.docId);
+    await this.firebase.deleteDocument('grupos', group.docId);
   }
 
   uploadImage(file):Promise<any>{  
@@ -113,5 +114,21 @@ export class GroupSvcService {
   getGroupList(){
     return this._groupSubject.value
   }
+
+  /*getGroupByIdClient(id:string){
+    return new Promise<clientGym>(async (resolve,reject) => {
+      try{
+        var client = (await this.firebase.getDocument('clientes',id));
+        resolve({
+          id:0,
+          docId:client.id,
+          
+
+        });
+      }catch(error){
+        reject(error);
+      }
+    });
+  }*/
 
 }

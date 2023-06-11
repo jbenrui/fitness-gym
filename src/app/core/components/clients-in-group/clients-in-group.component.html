@@ -8,7 +8,7 @@
 </ion-header>
 <ion-content>
   <ion-grid>
-    <ion-row *ngFor="let client of (clients$ | async)">
+    <ion-row *ngFor="let client of group.clients">
       <ion-col>
         <ng-container *ngIf="client?.photo">
           <ion-avatar>
