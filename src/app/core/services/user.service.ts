@@ -239,6 +239,16 @@ export class UserSVC {
         reject(error);
       }
     });
-}
+  }
 
+  async deleteUser(user:User){
+    try {
+      this.firebase.signOut();
+      this.router.navigate(['login']);
+      await this.firebase.deleteUser();
+      await this.firebase.deleteDocument('usuarios', user.uid);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }

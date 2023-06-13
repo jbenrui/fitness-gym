@@ -18,7 +18,6 @@
         </ion-item>
         <ion-item *ngIf="getTypes()[i] === 'Email'" lines="none">
           <ion-label class="label">{{getHeaders()[i]}}:  {{user[attribute]}}</ion-label>
-          
         </ion-item>
         <ion-item *ngIf="getTypes()[i] !== 'Date' && getTypes()[i] !== 'Email'" lines="none">
           <ion-label class="label">{{getHeaders()[i]}}:</ion-label>
@@ -28,6 +27,10 @@
       <ion-button class="edit" color="primary" (click)="onUpdateClick()" fill="clear">
         <ion-icon name="create-outline"></ion-icon>
         <ion-text>{{'config.profile.btn_edit' | translate}}</ion-text>
+      </ion-button>
+      <ion-button class="edit" color="primary" (click)="onDeleteClick()" fill="clear">
+        <ion-icon name="trash-outline"></ion-icon>
+        <ion-text>{{'general.btn_delete' | translate}}</ion-text>
       </ion-button>
       <ion-button (click)="onLogoutClick()" class="logout" color="primary" fill="clear" >
         <ion-icon name="log-out-outline"></ion-icon>

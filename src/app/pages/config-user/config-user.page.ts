@@ -1,9 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { User } from 'firebase/auth';
+import { AlertController, ModalController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
+import { lastValueFrom } from 'rxjs';
 import { EditUserFormComponent } from 'src/app/core/components/edit-user-form/edit-user-form.component';
 import { ConfigUserDataForm } from 'src/app/core/models/jsonModels/configUserForm.model';
+import { User } from 'src/app/core/models/user_model_gym';
+import { GroupSvcService } from 'src/app/core/services/group-svc.service';
 import { UserSVC } from 'src/app/core/services/user.service';
 
 @Component({
@@ -21,6 +24,9 @@ export class ConfigUserPage implements OnInit {
     protected user:UserSVC,
     private modal:ModalController,
     private http:HttpClient,
+    private alert:AlertController,
+    private translate:TranslateService,
+    private groupSVC:GroupSvcService
     ) 
     {
       this.http.get('assets/json/form-edit-user.json').subscribe((jsonConfigUserForm:ConfigUserDataForm) => {
@@ -33,9 +39,7 @@ export class ConfigUserPage implements OnInit {
 
       });
 
-      
     } 
-
 
    /**
      * Sign out the user
@@ -48,6 +52,10 @@ export class ConfigUserPage implements OnInit {
 
     onUpdateUser(user:User){
       this.userForm(user);
+    }
+
+    deleteUser(u:User){
+      this.onDeleteUser(u);
     }
 
     async userForm(user:User|null|undefined){
@@ -71,7 +79,68 @@ export class ConfigUserPage implements OnInit {
       });
 
     }
+
+    async onDeleteAlert(user:User){
+      const alert = await this.alert.create({
+        header: await lastValueFrom(this.translate.get('general.warning')),
+        buttons: [
+          {
+            text: await lastValueFrom(this.translate.get('general.btn_cancel')),
+            role: 'cancel',
+            handler: () => {
+              console.log("Operacion cancelada");
+            },
+          },
+          {
+            text: await lastValueFrom(this.translate.get('general.btn_delete')),
+            role: 'confirm',
+            handler: () => {
+                this.user.deleteUser(user);
+              
+            },
+          },
+        ],
+      });
+    
+      await alert.present();
+    
+      const { role } = await alert.onDidDismiss();
+    }
+
+    async onUserExistsAlertInGroup(user:User){
+      const alert = await this.alert.create({
+        header: 'Error',
+        message: await lastValueFrom(this.translate.get('general.exist')),
+        buttons: [
+          {
+            text: await lastValueFrom(this.translate.get('general.btn_close')),
+            role: 'close',
+            handler: () => {
+            },
+          },
+        ],
+      });
+    
+      await alert.present();
+    
+      const { role } = await alert.onDidDismiss();
+    }
+
     ngOnInit() {}
     
+
+    async onDeleteUser(user:User){
+      try{
+        const OnGroup = this.groupSVC.getGroupByIdUser(user.uid);
+        
+        if (!OnGroup) {
+          this.onDeleteAlert(user);
+        }else{
+          this.onUserExistsAlertInGroup(user);
+        }
+      }catch (error) {
+        console.error(error);
+      }
+    }
 }
 

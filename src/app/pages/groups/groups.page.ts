@@ -165,7 +165,6 @@ export class GroupsPage implements OnInit {
       const OnGroup = this.clientSVC.getClientByIdGroup(group.docId)
       
       if ((await OnGroup).length === 0) {
-
         this.onDeleteAlert(group);
       }else{
         this.onGroupExistsAlert(group);

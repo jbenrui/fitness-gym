@@ -4,6 +4,7 @@ import { groupGym } from '../models/group_model_gym';
 import { FileUploaded, FirebaseService } from './firebase/firebase-service';
 import { DocumentData } from 'firebase/firestore';
 import { clientGym } from '../models/client_model_gym';
+import { User } from '../models/user_model_gym';
 
 @Injectable({
   providedIn: 'root'
@@ -77,7 +78,6 @@ export class GroupSvcService {
       docId:group.docId,
       name:group.name,
       description:group.description,
-      clients:group.clients,
       docMonitor:group.docMonitor,
     };
     if(group['pictureFile']){
@@ -97,7 +97,6 @@ export class GroupSvcService {
       docId:group.docId,
       name:group.name,
       description:group.description,
-      clients:group.clients,
       docMonitor:group.docMonitor,
     };
     if (group['pictureFile'] !== null && group['pictureFile'] !== undefined) {
@@ -115,20 +114,27 @@ export class GroupSvcService {
     return this._groupSubject.value
   }
 
-  /*getGroupByIdClient(id:string){
-    return new Promise<clientGym>(async (resolve,reject) => {
+  getGroupByIdUser(id:string){
+    return new Promise<User>(async (resolve,reject) => {
       try{
-        var client = (await this.firebase.getDocument('clientes',id));
+        var user = await this.firebase.getDocument('usuarios', id);
         resolve({
           id:0,
-          docId:client.id,
-          
-
+          uid: id,
+          username: user.data['username'],
+          first_name: user.data['first_name'],
+          last_name: user.data['last_name'],
+          birthdate: user.data['birthdate'],
+          email: user.data['email'],
+          password: user.data['password'],
+          phone: user.data['phone'],
+          dni: user.data['dni'],
+          photo: user.data['photo'] 
         });
       }catch(error){
         reject(error);
       }
     });
-  }*/
+  }
 
 }

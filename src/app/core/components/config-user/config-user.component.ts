@@ -16,8 +16,7 @@ export interface ConfigUser {
 })
 export class ConfigUserComponent implements OnInit {
 
-
-  /**
+/**
  * Array to store header data for ConfigUserData type
  */
 headerArray: ConfigUserData[] = [];
@@ -46,8 +45,9 @@ bodyArray: ConfigUserData[] = [];
  * Output EventEmitter for update event
  * Emits an event when the update button is clicked
  */
-@Output() onUpdate = new EventEmitter();
-@Output() onLogout = new EventEmitter();
+  @Output() onUpdate = new EventEmitter();
+  @Output() onLogout = new EventEmitter();
+  @Output() onDelete = new EventEmitter();
   
   constructor(
     private translate : TranslateService,
@@ -170,6 +170,9 @@ onLogoutClick(){
   this.onLogout.emit()
 }
 
+onDeleteClick(){
+  this.onDelete.emit(this.user)
+}
 
 
 }
