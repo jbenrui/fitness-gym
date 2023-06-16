@@ -8,13 +8,13 @@
 Crear una aplicación tanto en nativo como en híbrido que gestione los clientes de un gimnasio, los grupos a los que pertenecen y la duración de su inscripción. La aplicación está orientada a la administración del gimnasio.
 
 ## Base de datos
-La base de datos será en Firebase y se usará en ambas aplicaciones. Un empleado puede estar en muchos grupos, pero un grupo solo puede tener un empleado. Un grupo puede tener muchos clientes y un cliente puede estar en muchos grupos.
+La base de datos será en Firebase y se usará en ambas aplicaciones. Un empleado puede estar en muchos grupos, pero un grupo solo puede tener un empleado. Un grupo puede tener muchos clientes y un cliente puede estar en un grupo.
 
-La aplicación consta de 3 modelos. El modelo "usuarios" se refiere a los clientes del gimnasio (usuarios_gym). De estos se necesita su nombre, apellidos, email, fecha de nacimiento, código postal, número de teléfono, DNI/NIE, una foto de perfil y la duración de su suscripción.
+La aplicación consta de 3 modelos. El modelo "clientes" , de estos se necesita su nombre, apellidos, email, fecha de nacimiento, código postal, número de teléfono, DNI/NIE, una foto de perfil y el dia de la inscripcion.
 
-Luego tenemos la entidad "grupos", que refiere a las clases y actividades que se imparten en el gimnasio. Necesitan nombre, descripción y foto. Un usuario puede estar en muchos grupos y un grupo tiene muchos usuarios.
+Luego tenemos la entidad "grupos", que refiere a las clases y actividades que se imparten en el gimnasio. Necesitan nombre, descripción y foto. Un cliente puede estar en un grupo y un grupo tener muchos clientes.
 
-Al cargo de cada grupo está un monitor, que es un empleado del gimnasio (empleado_gym). De estos se necesita su nombre, apellidos, nombre de usuario, fecha de nacimiento, email, contraseña, número de teléfono, DNI/NIE y foto de perfil. Un empleado puede tener muchos grupos a su cargo, pero un grupo solo puede tener un empleado al frente.
+Al cargo de cada grupo está un monitor, que es un empleado del gimnasio (empleado_gym). De estos se necesita su nombre, apellidos, fecha de nacimiento, email, contraseña, número de teléfono, DNI/NIE y foto de perfil. Un empleado puede tener muchos grupos a su cargo, pero un grupo solo puede tener un empleado al frente.
 
 ### Modelado de la base de datos (puede cambiar) - 13/04/2023
 <p align="center">
@@ -23,6 +23,8 @@ Al cargo de cada grupo está un monitor, que es un empleado del gimnasio (emplea
 
 ## Requisitos Específicos del Módulo Sistemas de Gestión Empresarial (SGE)
 Para esta asignatura, procederemos a descargar los datos de los clientes (CSV o JSON), manipularlos con Pandas y crear un nuevo archivo que le sirva de entrada a PowerBI.
+
+
 
 ## Requisitos Específicos del Módulo Desarrollo de Interfaces
 Para la asignatura de diseño de interfaces, crearemos un informe a partir de esos datos en el que mostraremos gráficas como rangos de edad, grupos más/menos solicitados y monitores que están a cargo de más/menos grupos. Se subirá al repositorio del proyecto y también se publicará en Power BI, compartiéndolo con la dirección de correo educativa del profesor.
