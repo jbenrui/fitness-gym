@@ -35,7 +35,7 @@ Una vez teniendo el backup desarollamos usando la libreria de pandas el siguient
 Para la asignatura de diseño de interfaces, crearemos un informe a partir de esos datos (Los datos de los clientes y los grupos a los que pertencen) en el que hemos mostrado gráficas como rangos de edad, grupos con mas clientes, monitores que están a cargo de más/menos grupos, el total de los clietnes, una tabla para visualizar todos los datos de los clientes y un mapa con la localidad de estos clientes. Se subirá al repositorio del proyecto y también se publicará en Power BI, compartiéndolo con la dirección de correo educativa del profesor.
 
 <p align="center">
-  <img src="Imagenes/PWBI.png" alt="DI">
+  <img src="Imagenes/PBI.png" alt="DI">
 </p>
 
 
@@ -49,6 +49,8 @@ Este proyecto utiliza Trello para la gestión de las tareas a realizar.
 ## Vídeo Checkout 05/05/2023
 [Ver vídeo en YouTube](https://www.youtube.com/watch?v=go-7G-VvBFE)
 
+## Vídeo Final 16/06/2023
+[Ver vídeo en YouTube](https://www.youtube.com/watch?v=go-7G-VvBFE)
 ## Desarrollado por:
 - Jose Antonio Benitez (Híbrido)
 - Alberto Moreno (Nativo)
