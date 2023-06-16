@@ -86,15 +86,15 @@ Para la asignatura de diseño de interfaces, crearemos un informe a partir de es
  <p align="center">
   <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 20px;">
     <div style="text-align: center;">
-      <img src="login.png" alt="Login">
+      <img src="Imagenes/login.png" alt="Login">
       <p>Login</p>
     </div>
     <div style="text-align: center;">
-      <img src="registro.png" alt="Registro">
+      <img src="Imagenes/registro.png" alt="Registro">
       <p>Registro</p>
     </div>
     <div style="text-align: center;">
-      <img src="recuperarPassword.png" alt="Recuperar Contraseña">
+      <img src="Imagenes/recuperarPassword.png" alt="Recuperar Contraseña">
       <p>Recuperar Contraseña</p>
     </div>
   </div>
