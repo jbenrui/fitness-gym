@@ -9,7 +9,17 @@
         </ion-card-header>
       
         <ion-card-content>
-          
+            <ion-item>
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-label>{{'login.lbl_session' |translate}}: {{sessionData}}</ion-label>
+                    <ion-label>{{lastSessionDate | date:'mediumDate':'es-es'}}</ion-label>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              
+            </ion-item>
             <ion-item>
               <ion-label>{{'login.lbl_email' | translate}}</ion-label>
               <ion-input [enterkeyhint]="'next'" autocomplete="email" placeholder="jbenrui@fitnessgym.es" formControlName="identifier" type="text"></ion-input>

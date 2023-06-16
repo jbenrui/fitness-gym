@@ -18,3 +18,15 @@ ion-card{
     margin: auto;
     width: 50%;
 }
+
+@media (max-width: 450px) {
+
+    ion-img{
+        width: 100%;
+        margin: auto;
+    }
+
+    ion-card{
+        width: 95%;
+    }
+}

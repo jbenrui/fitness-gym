@@ -5,7 +5,8 @@ import { ModalController } from '@ionic/angular';
 import { UserSVC } from 'src/app/core/services/user.service';
 import { SingupComponent } from '../singup/singup.component';
 import { RecoverPasswordComponent } from '../recover-password/recover-password.component';
-
+import { Storage } from '@ionic/storage-angular';
+import { Observable, first, fromEvent } from 'rxjs';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -13,11 +14,14 @@ import { RecoverPasswordComponent } from '../recover-password/recover-password.c
 })
 export class SigninComponent implements OnInit {
   form:FormGroup;
+  sessionData:any;
+  lastSessionDate:any;
   constructor(
     private formbuilder:FormBuilder,
     private modalContrl:ModalController,
     private user:UserSVC,
-    private router:Router) {
+    private router:Router,
+    private storage: Storage) {
 
       this.form = this.formbuilder.group({
         identifier:["",[Validators.required, Validators.email]],
@@ -26,8 +30,13 @@ export class SigninComponent implements OnInit {
       });
      }
 
-  ngOnInit() {}
-
+     async ngOnInit() {
+      this.storage = await this.storage.create();
+      const lastSession = await this.storage?.get('lastSession');
+      this.sessionData = lastSession;
+      this.lastSessionDate = await this.storage?.get('lastSessionDate');
+    }
+    
 
   async recoverPassword(){
     const modal = await this.modalContrl.create({
@@ -71,16 +80,20 @@ export class SigninComponent implements OnInit {
       modal.present();
   }
 
-  async signIn(){
-    try{
+  async signIn() {
+    try {
       await this.user.login(this.form.value);
       console.log("Login successful, navigating to home...");
-      this.router.navigate(['home'],{replaceUrl:true})
-      
-    }catch (error){
-      console.log(error)
+      const user = await this.user.getUser().email; // Obtener los datos del usuario
+      await this.storage?.set('lastSession', user); // Guardar la última sesión en Ionic Storage
+      const sessionDate = new Date();
+      await this.storage?.set('lastSessionDate',sessionDate);
+      this.router.navigate(['home'], { replaceUrl: true });
+    } catch (error) {
+      console.log(error);
     }
   }
+  
 
   hasFormError(error){
     return this.form?.errors && Object.keys(this.form.errors).filter(e=>e==error).length==1;

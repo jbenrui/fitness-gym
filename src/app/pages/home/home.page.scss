@@ -6,4 +6,42 @@
 #toggle-text{
     padding: 10px;
 }
+.center-grid {
+    display: flex;
+    justify-content: center;
+  }
 
+ion-card{
+    padding: 20px;
+    width: 30%;
+    margin: auto;
+}
+
+ion-card-title{
+    text-align: center;
+    font-size: 4vh;
+}
+
+@media (max-width: 450px) {
+
+    ion-img{
+        width: 100%;
+        margin: auto;
+    }
+
+    ion-card{
+        width: 90%;
+    }
+}
+
+@media (max-width: 1050px) {
+
+    ion-img{
+        width: 100%;
+        margin: auto;
+    }
+
+    ion-card{
+        width: 90%;
+    }
+}

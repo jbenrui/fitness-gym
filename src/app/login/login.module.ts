@@ -14,6 +14,8 @@ import { HttpClient } from '@angular/common/http';
 import { SigninComponent } from './components/signin/signin.component';
 import { SingupComponent } from './components/singup/singup.component';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
+import { IonicStorageModule } from '@ionic/storage-angular';
+
 
 @NgModule({
   imports: [
@@ -21,15 +23,20 @@ import { RecoverPasswordComponent } from './components/recover-password/recover-
     FormsModule,
     IonicModule,
     CoreModule,
+    IonicStorageModule.forRoot(), // Importar el proveedor IonicStorageModule aquí
     TranslateModule.forChild({
       loader: {
-      provide: TranslateLoader,
-      useFactory: (createTranslateLoader),
-      deps: [HttpClient]
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
       }
-      }),
+    }),
     LoginPageRoutingModule
   ],
-  declarations: [LoginPage,SigninComponent,SingupComponent,RecoverPasswordComponent]
+  declarations: [LoginPage, SigninComponent, SingupComponent, RecoverPasswordComponent],
+  providers: [
+    Storage,
+  ]
 })
 export class LoginPageModule {}
+

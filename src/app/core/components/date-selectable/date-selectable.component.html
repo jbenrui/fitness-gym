@@ -7,7 +7,7 @@
       <ion-label slot="start" *ngIf="!hasValue">{{'date.lblselectabled' | translate}}</ion-label>
     </ion-item>
     <div class="ion-padding" slot="content">
-      <ion-datetime #datetime value="{{(date$ | async)}}" (ionChange)="onDateTimeChanged($event, accordion)" locale="{{getLocale()}}">
+      <ion-datetime presentation="date" #datetime value="{{(date$ | async)}}" (ionChange)="onDateTimeChanged($event, accordion)" locale="{{getLocale()}}">
         <ion-buttons slot="buttons">
           <ion-button color="danger" (click)="onCancel(datetime, accordion)">{{'general.btn_cancel' | translate}}</ion-button>
           <ion-button color="primary" (click)="onConfirm(datetime, accordion)">{{'general.btn_guardar' | translate}}</ion-button>

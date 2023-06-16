@@ -23,6 +23,7 @@ import { GroupFormComponent } from './components/group-form/group-form.component
 import { MonitorSelectableComponent } from './components/monitor-selectable/monitor-selectable.component';
 import { ClientsInGroupComponent } from './components/clients-in-group/clients-in-group.component';
 import { GroupSelectableComponent } from './components/group-selectable/group-selectable.component';
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 registerLocaleData(en);
 registerLocaleData(es);

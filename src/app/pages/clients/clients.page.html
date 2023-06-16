@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start" defaultHref="/">Return to Home</ion-back-button>
+    <ion-title>clients</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="screenType()=='BIG'">
+    <app-client-header-table [jsonTableBody]="jsonTableBody"></app-client-header-table>
+  </ng-container>
+  
+  <ng-container *ngFor="let client of getClientList() | async">
+    <app-client-table [client]="client" [jsonTableBody]="jsonTableBody" (onUpdate)="onUpdateClient($event)" (onDelete)="onDeleteClient($event)" (onDetail)="onDetailClient($event)"></app-client-table>
+  </ng-container>
+  
+  <ion-fab vertical="bottom" horizontal="end"  slot="fixed" >
+    <ion-fab-button color="primary" (click)="onAddClient()"><ion-icon style="zoom:2" name="add-outline"></ion-icon></ion-fab-button>
+  </ion-fab>
+</ion-content>

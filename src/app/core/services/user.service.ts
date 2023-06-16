@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import 'firebase/auth';
 import { DocumentData } from 'firebase/firestore';
 import { Monitor } from '../models/monitor_model';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -27,13 +28,14 @@ export class UserSVC {
   unsubcr2;
   constructor(
     private firebase: FirebaseService, // Inyección de dependencia de FirebaseService
-    private router: Router // Inyección de dependencia de Router
-  ) { 
+    private router: Router, // Inyección de dependencia de Router
+    private authService: AuthService,
+    ) {
+    
     this.init(); // Llamada al método init() en el constructor
     this.unsubcr = this.firebase.subscribeToCollection('usuarios',this._user,this.mapUser); // Suscripción a la colección 'usuarios' en Firebase y mapeo de los documentos recibidos con el método mapUser()
     this.unsubcr2 = this.firebase.subscribeToCollection('usuarios',this._monitorSubject,this.mapUser);
   }
-
   /**
    * Maps data from a document to a user object.
    * 
@@ -55,7 +57,6 @@ export class UserSVC {
       photo: doc.data().photo
     };
   }
-
   /**
    * Initializes the class.
    */
@@ -73,6 +74,12 @@ export class UserSVC {
       this._isLogged.next(logged);
     });
 
+  }
+
+
+
+  getUser(){
+    return this.firebase.getUser();
   }
 
   /**
@@ -209,6 +216,12 @@ export class UserSVC {
    */
   getUserList(){
     return this._monitorSubject.value;
+  }
+
+  getUserByUid(uid: string) {
+    const userList = this._monitorSubject.value;
+    const user = userList.find((user) => user.uid === uid);
+    return user;
   }
 
   /**

@@ -1,5 +1,6 @@
 {
     "login":{
+        "lbl_session":"Last Session",
         "lbl_email":"Email",
         "lbl_password":"Password",
         "btn_signin":"Sing In",
@@ -34,6 +35,9 @@
         },
         "lblselectabled":"Select one Monitor"
     },
+    "clients":{
+        "lbl_client":"Clients"
+    },
     "btn_common":{
         "btn_change_picture":"Change Picture"
         
@@ -43,6 +47,7 @@
         "lblselectabled":"Select one Date"
     },
     "general":{
+        "lbl_welcome":"Welcome to FitnessGym: ",
         "btn_cancel":"Cancel",
         "btn_add":"Add",
         "btn_delete":"Delete",
@@ -51,5 +56,25 @@
         "btn_close":"Close",
         "warning":"¿Are you sure that you want delete this?",
         "exist":"Its not possible to delete the element, it assing to other element"
+    },
+    "aboutme":{
+        "title":"About Me",
+        "card_content":"This App has been developed with the final puporse that the user can keep track his advances in the Gym and be able to do a train plan in base at his progress",
+        "card_subtitle":"2 DAM's Student | ADD & HLC | CPIFP Malaga Tech Park",
+        "tip":"How many time do you train an Muscular Group?",
+        "one_week":"Once a week",
+        "one_or_twoweek":"Once or Twice a week", 
+        "two_or_threeWeek":"Two or Three times a week",   
+        "contactme":"Contact Me",  
+        "hobbies":"My Hobbies",
+        "textHobbie":"Im just a guy that I like train and feels de pump on my muscles. So I spend a lot of time to learn about the muscles and training, and I realized when you more progress its when you count what you do."
+    },
+    "groupMuscular":{
+        "upperbodyfront":"Chest",
+        "upperbodyback":"Back",
+        "lowerbody":"Legs",
+        "armsbody":"Shoulder and Arms",
+        "corebody":"Core"
     }
+    
 }

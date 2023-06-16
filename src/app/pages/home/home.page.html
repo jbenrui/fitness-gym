@@ -6,16 +6,28 @@
     <ion-button slot="start" [routerLink]="['../groups']" color="primary" fill="clear">
       <ion-text>{{'groups.lbl_tittle' | translate}}</ion-text>
     </ion-button>
+    <ion-button slot="start" [routerLink]="['../clients']" color="primary" fill="clear">
+      <ion-text>{{'clients.lbl_client' | translate}}</ion-text>
+    </ion-button>
+    <ion-button slot="start" [routerLink]="['../aboutme']" color="primary" fill="clear">
+      <ion-text>{{'aboutme.title' | translate}}</ion-text>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <app-client-header-table [jsonTableBody]="jsonTableBody"></app-client-header-table>
-  <ng-container *ngFor="let client of getClientList() | async">
-    <app-client-table [client]="client" [jsonTableBody]="jsonTableBody" (onUpdate)="onUpdateClient($event)" (onDelete)="onDeleteClient($event)" (onDetail)="onDetailClient($event)"></app-client-table>
-  </ng-container>
-  
-  <ion-fab vertical="bottom" horizontal="end"  slot="fixed" >
-    <ion-fab-button color="primary" (click)="onAddClient()"><ion-icon style="zoom:2" name="add-outline"></ion-icon></ion-fab-button>
-  </ion-fab>
+  <div class="center-grid">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-img alt="User-img" [src]="user.photo" class="img-card"></ion-img>
+            <ion-card-header>
+              <ion-card-title>{{'general.lbl_welcome' | translate}} {{user.first_name}}</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
