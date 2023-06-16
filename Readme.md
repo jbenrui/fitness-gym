@@ -99,9 +99,9 @@ Para la asignatura de diseño de interfaces, crearemos un informe a partir de es
     </td>
   </tr>
 </table>
-
-
-
+En esta seccion de la aplicacion vemos el login donde contamos con 4 botones, el primero es el de iniciar sesion (sing in), el segundo es el de (sing up) para acceder a la ventana de registro, 
+el tercero es para recupera la contraseña (vemos una frase que nos pregunta si hemos olvidado la contraseña, al hacer click no abre una ventana para introducir nuestro email y recibir un correo).
+Y por ultimo un boton abajo a la izquierda que nos sirve para cambiar el idioma de la aplicacion de español a ingles.
 
 ## Trello
 Este proyecto utiliza Trello para la gestión de las tareas a realizar.
