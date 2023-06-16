@@ -2,17 +2,6 @@
 {
     "config": [
       {
-        "ID": "username",
-        "LabelEN": "Username",
-        "LabelES": "Usuario",
-        "Type": "string",
-        "Value": "",
-        "Validators": {
-          "required": true,
-          "minLength": 10
-        }
-      },
-      {
         "ID": "first_name",
         "LabelEN": "First Name",
         "LabelES": "Nombre",
