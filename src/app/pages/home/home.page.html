@@ -1,21 +1,66 @@
-<ion-header>
-  <ion-toolbar class="bg-animation">
-    <ion-button slot="start" [routerLink]="['../config-user']" color="primary" fill="clear">
-      <ion-text>{{'config.lbl_tittle' | translate}}</ion-text>
-    </ion-button>
-    <ion-button slot="start" [routerLink]="['../groups']" color="primary" fill="clear">
-      <ion-text>{{'groups.lbl_tittle' | translate}}</ion-text>
-    </ion-button>
-    <ion-button slot="start" [routerLink]="['../clients']" color="primary" fill="clear">
-      <ion-text>{{'clients.lbl_client' | translate}}</ion-text>
-    </ion-button>
-    <ion-button slot="start" [routerLink]="['../aboutme']" color="primary" fill="clear">
-      <ion-text>{{'aboutme.title' | translate}}</ion-text>
-    </ion-button>
-  </ion-toolbar>
-</ion-header>
+<ng-container *ngIf="screenType()=='BIG'">
+  <ion-header>
+    <ion-toolbar class="bg-animation">
+      <ion-buttons slot="start">
+        <ion-button [routerLink]="['../config-user']" color="primary" fill="clear">
+          <ion-text>{{ 'config.lbl_tittle' | translate }}</ion-text>
+        </ion-button>
+        <ion-button [routerLink]="['../groups']" color="primary" fill="clear">
+          <ion-text>{{ 'groups.lbl_tittle' | translate }}</ion-text>
+        </ion-button>
+        <ion-button [routerLink]="['../clients']" color="primary" fill="clear">
+          <ion-text>{{ 'clients.lbl_client' | translate }}</ion-text>
+        </ion-button>
+        <ion-button [routerLink]="['../aboutme']" color="primary" fill="clear">
+          <ion-text>{{ 'aboutme.title' | translate }}</ion-text>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+</ng-container>
 
-<ion-content>
+<ng-container *ngIf="screenType()=='SMALL'">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-menu contentId="main-content" [type]="screenType()=='BIG'?'push':'overlay'">
+    <ion-content class="ion-padding">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button [routerLink]="['../config-user']" color="primary" fill="clear">{{ 'config.lbl_tittle' | translate }}</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button [routerLink]="['../groups']" color="primary" fill="clear">{{ 'groups.lbl_tittle' | translate }}</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button [routerLink]="['../clients']" color="primary" fill="clear">{{ 'clients.lbl_client' | translate }}</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button [routerLink]="['../aboutme']" color="primary" fill="clear">{{ 'aboutme.title' | translate }}</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button (click)="signOut()">{{'config.profile.btn_logout' | translate}}</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-content>
+  </ion-menu>
+</ng-container>
+
+<ion-content id="main-content">
   <div class="center-grid">
     <ion-grid>
       <ion-row>
@@ -23,7 +68,7 @@
           <ion-card>
             <ion-img alt="User-img" [src]="user.photo" class="img-card"></ion-img>
             <ion-card-header>
-              <ion-card-title>{{'general.lbl_welcome' | translate}} {{user.first_name}}</ion-card-title>
+              <ion-card-title>{{ 'general.lbl_welcome' | translate }} {{ user.first_name }}</ion-card-title>
             </ion-card-header>
           </ion-card>
         </ion-col>
@@ -31,3 +76,4 @@
     </ion-grid>
   </div>
 </ion-content>
+
