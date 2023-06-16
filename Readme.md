@@ -31,8 +31,13 @@ Una vez teniendo el backup desarollamos usando la libreria de pandas el siguient
   <img src="Imagenes/ConvertirEnCSV.png" alt="archivoPython">
 </p>
 
-## Requisitos Específicos del Módulo Desarrollo de Interfaces
-Para la asignatura de diseño de interfaces, crearemos un informe a partir de esos datos en el que mostraremos gráficas como rangos de edad, grupos más/menos solicitados y monitores que están a cargo de más/menos grupos. Se subirá al repositorio del proyecto y también se publicará en Power BI, compartiéndolo con la dirección de correo educativa del profesor.
+## Requisitos Específicos del Módulo Desarrollo de Interfaces (DI)
+Para la asignatura de diseño de interfaces, crearemos un informe a partir de esos datos (Los datos de los clientes y los grupos a los que pertencen) en el que hemos mostrado gráficas como rangos de edad, grupos con mas clientes, monitores que están a cargo de más/menos grupos, el total de los clietnes, una tabla para visualizar todos los datos de los clientes y un mapa con la localidad de estos clientes. Se subirá al repositorio del proyecto y también se publicará en Power BI, compartiéndolo con la dirección de correo educativa del profesor.
+
+<p align="center">
+  <img src="Imagenes/PWBI.png" alt="DI">
+</p>
+
 
 ## Trello
 Este proyecto utiliza Trello para la gestión de las tareas a realizar.
