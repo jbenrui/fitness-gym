@@ -139,6 +139,18 @@ la aplicaion entre ellas esta la de about me que contiene un poco de informacion
 En la seccion de clientes y grupos podemos ver una lista y botones para ver los editar, borrar y ver los detalles, ademas de un boton para añadir. En la seccion de perfil, nos encontramos informacion sobre el usuario de la aplicacion,
 junto con varios botones para editar el usuario, borrarlo y hacer logout.
 
+## Bibliografia:
+ - [Ionic Framework](https://ionicframework.com/)
+ - [Angular documentation](https://angular.io/docs)
+ - [Firebase | Firestore - Importar y Exportar](https://www.youtube.com/watch?v=bAeF5Y6V4Sg)
+ - [Ionic Storage](https://youtu.be/vCfAe2esboU)
+ - [Ionic Storage doc](https://github.com/ionic-team/ionic-storage#readme)
+
+##Despliegue:
+https://fitness-gym-80s.web.app
+ 
+
+
 ## Trello
 Este proyecto utiliza Trello para la gestión de las tareas a realizar.
 [Trello FitnessGym](https://trello.com/b/bwXyty7u/fitnessgym)
