@@ -24,7 +24,12 @@ Al cargo de cada grupo está un monitor, que es un empleado del gimnasio (emplea
 ## Requisitos Específicos del Módulo Sistemas de Gestión Empresarial (SGE)
 Para esta asignatura, procederemos a descargar los datos de los clientes (CSV o JSON), manipularlos con Pandas y crear un nuevo archivo que le sirva de entrada a PowerBI.
 
+Para descargar los datos de los clientes hemos usado el paquete de node: node-firestore-import-export, para instalarlo hemos usado el comando npm i -g nombredelpaquete o npm install -g nombredelpaquete. Una vez fue instalado usamos el comando : firestore-export --accountCredentials path/to/credentials/file.json --backupFile /backups/myDatabase.json remplazando las rutas por las nuestras propias rutas, para obtener las credenciales tuvimos que generar una nueva key en firebase.
 
+Una vez teniendo el backup desarollamos usando la libreria de pandas el siguiente archivo:
+<p align="center">
+  <img src="Imagenes/ConvertirenCSV.png" alt="archivoPython">
+</p>
 
 ## Requisitos Específicos del Módulo Desarrollo de Interfaces
 Para la asignatura de diseño de interfaces, crearemos un informe a partir de esos datos en el que mostraremos gráficas como rangos de edad, grupos más/menos solicitados y monitores que están a cargo de más/menos grupos. Se subirá al repositorio del proyecto y también se publicará en Power BI, compartiéndolo con la dirección de correo educativa del profesor.
