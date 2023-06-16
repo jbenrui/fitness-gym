@@ -67,7 +67,17 @@ Para la asignatura de diseño de interfaces, crearemos un informe a partir de es
 
 
 ## Manual de instalacion y dependencias: 
-
+ ### Dependecias :
+ - Tener instalado node.js y ionic framework
+ - Equipo con espacio en el disco
+ - Conexion a internet para poder conectar con el backend
+ 
+ ### Instalacion :
+ - Descargar este repositorio ya sea en formato zip o usando un git pull
+ - Extraer los archivos del zip en caso de haber descargado el zip o en el caso del git pull abrir la carpeta
+ - Abrir la carpeta del programa con visual studio code
+ - Ejecutar en el terminal npm i 
+ - Ejecutar ionic serve
 
 
 ## Trello
