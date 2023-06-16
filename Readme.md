@@ -4,17 +4,40 @@
   <img src="Imagenes/logo.png" alt="Logo">
 </p>
 
-## Objetivo del Proyecto
-Crear una aplicación tanto en nativo como en híbrido que gestione los clientes de un gimnasio, los grupos a los que pertenecen y la duración de su inscripción. La aplicación está orientada a la administración del gimnasio.
+<p align="center">Crear una aplicación tanto en nativo como en híbrido que gestione los clientes de un gimnasio, los grupos a los que pertenecen y la duración de su inscripción. La aplicación está orientada a la administración del gimnasio.</p>
 
 ## Base de datos
-La base de datos será en Firebase y se usará en ambas aplicaciones. Un empleado puede estar en muchos grupos, pero un grupo solo puede tener un empleado. Un grupo puede tener muchos clientes y un cliente puede estar en un grupo.
+La base de datos será en Firebase y se utilizará en ambas aplicaciones. Un empleado puede estar en muchos grupos, pero un grupo solo puede tener un empleado. Un grupo puede tener muchos clientes y un cliente puede estar en un grupo.
 
-La aplicación consta de 3 modelos. El modelo "clientes" , de estos se necesita su nombre, apellidos, email, fecha de nacimiento, código postal, número de teléfono, DNI/NIE, una foto de perfil y el dia de la inscripcion.
+La aplicación consta de 3 modelos:
 
-Luego tenemos la entidad "grupos", que refiere a las clases y actividades que se imparten en el gimnasio. Necesitan nombre, descripción y foto. Un cliente puede estar en un grupo y un grupo tener muchos clientes.
+### Modelo "clientes"
+- Nombre
+- Apellidos
+- Email
+- Fecha de nacimiento
+- Código postal
+- Número de teléfono
+- DNI/NIE
+- Foto de perfil
+- Día de la inscripción
 
-Al cargo de cada grupo está un monitor, que es un empleado del gimnasio (empleado_gym). De estos se necesita su nombre, apellidos, fecha de nacimiento, email, contraseña, número de teléfono, DNI/NIE y foto de perfil. Un empleado puede tener muchos grupos a su cargo, pero un grupo solo puede tener un empleado al frente.
+### Modelo "grupos"
+- Nombre
+- Descripción
+- Foto
+
+### Modelo "empleado_gym" (monitor)
+- Nombre
+- Apellidos
+- Fecha de nacimiento
+- Email
+- Contraseña
+- Número de teléfono
+- DNI/NIE
+- Foto de perfil
+
+Al cargo de cada grupo está un monitor, que es un empleado del gimnasio. Un empleado puede tener muchos grupos a su cargo, pero un grupo solo puede tener un empleado al frente.
 
 ### Modelado de la base de datos (puede cambiar) - 13/04/2023
 <p align="center">
@@ -22,9 +45,13 @@ Al cargo de cada grupo está un monitor, que es un empleado del gimnasio (emplea
 </p>
 
 ## Requisitos Específicos del Módulo Sistemas de Gestión Empresarial (SGE)
-Para esta asignatura, procederemos a descargar los datos de los clientes (CSV o JSON), manipularlos con Pandas y crear un nuevo archivo que le sirva de entrada a PowerBI.
+Para esta asignatura, se descargaron los datos de los clientes en formato CSV o JSON, se manipularon con Pandas y se creó un nuevo archivo que sirve como entrada a PowerBI.
 
-Para descargar los datos de los clientes hemos usado el paquete de node: node-firestore-import-export, para instalarlo hemos usado el comando npm i -g nombredelpaquete o npm install -g nombredelpaquete. Una vez fue instalado usamos el comando : firestore-export --accountCredentials path/to/credentials/file.json --backupFile /backups/myDatabase.json remplazando las rutas por las nuestras propias rutas, para obtener las credenciales tuvimos que generar una nueva key en firebase.
+Para descargar los datos de los clientes, se utilizó el paquete de node `node-firestore-import-export`. A continuación, se muestra un ejemplo de cómo se puede instalar y utilizar:
+
+npm install -g node-firestore-import-export
+
+firestore-export --accountCredentials path/to/credentials/file.json --backupFile /backups/myDatabase.json remplazando las rutas por las nuestras propias rutas, para obtener las credenciales tuvimos que generar una nueva key en firebase.
 
 Una vez teniendo el backup desarollamos usando la libreria de pandas el siguiente archivo:
 <p align="center">
