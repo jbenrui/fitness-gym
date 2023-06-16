@@ -121,7 +121,6 @@ export class GroupSvcService {
         resolve({
           id:0,
           uid: id,
-          username: user.data['username'],
           first_name: user.data['first_name'],
           last_name: user.data['last_name'],
           birthdate: user.data['birthdate'],

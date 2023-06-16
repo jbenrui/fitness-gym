@@ -1,13 +1,6 @@
 {
     "config": [
         {
-            "ID": "username",
-            "LabelEN": "Username",
-            "LabelES": "Usuario",
-            "Type": "string",
-            "Value": ""
-        },
-        {
             "ID": "first_name",
             "LabelEN": "First Name",
             "LabelES": "Nombre",

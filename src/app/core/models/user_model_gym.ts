@@ -4,7 +4,6 @@ export interface UserLogin{
 }
 
 export interface UserRegister{
-    username:string,
     first_name:string,
     last_name:string,
     birthdate:string,
@@ -17,7 +16,6 @@ export interface UserRegister{
 export interface User{
     id:number,
     uid:string,
-    username:string,
     first_name:string,
     last_name:string,
     birthdate:string,

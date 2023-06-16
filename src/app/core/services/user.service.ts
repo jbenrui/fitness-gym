@@ -47,7 +47,6 @@ export class UserSVC {
     return {
       id: 0,
       uid: doc.id,
-      username: doc.data().username,
       first_name: doc.data().first_name,
       last_name: doc.data().last_name,
       birthdate: doc.data().birthdate,
@@ -108,7 +107,6 @@ export class UserSVC {
   async updateUser(user: User) {
     var _user = {
       uid: user.uid,
-      username: user.username,
       first_name: user.first_name,
       last_name: user.last_name,
       birthdate: user.birthdate,
@@ -187,7 +185,6 @@ export class UserSVC {
         const user = await this.firebase.createUserWithEmailAndPassword(data.email, data.password);
         const userData = {
           uid: user.user.uid,
-          username: data.username,
           first_name: data.first_name, 
           last_name: data.last_name,
           birthdate: data.birthdate,
@@ -238,7 +235,6 @@ export class UserSVC {
         resolve({
           id:0,
           uid: id,
-          username: user.data['username'],
           first_name: user.data['first_name'],
           last_name: user.data['last_name'],
           birthdate: user.data['birthdate'],
