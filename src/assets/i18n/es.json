@@ -56,7 +56,7 @@
     },
     "aboutme":{
         "title":"Sobre Mí",
-        "card_content":"Esta aplicacion ha sido desarrollada con el fin de que el usuario pueda llevar un registro de sus avances en el gimnasio y asi poder preparar un plan de entrenamiento en base a tu pogreso.",
+        "card_content":"Esta aplicacion ha sido desarrollada con el fin de que el usuario pueda llevar un gestion de los clientes y grupos del gimnasio.",
         "card_subtitle":"Alumno de 2º DAM | ADD & HLC | CPIFP Malaga Tech Park",
         "tip":"¿Cuantas Veces Entrenar un Grupo Muscular?",
         "one_week":"Una vez en semana",
