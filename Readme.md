@@ -28,7 +28,7 @@ Para descargar los datos de los clientes hemos usado el paquete de node: node-fi
 
 Una vez teniendo el backup desarollamos usando la libreria de pandas el siguiente archivo:
 <p align="center">
-  <img src="Imagenes/ConvertirenCSV.png" alt="archivoPython">
+  <img src="Imagenes/ConvertirEnCSV.png" alt="archivoPython">
 </p>
 
 ## Requisitos Específicos del Módulo Desarrollo de Interfaces
