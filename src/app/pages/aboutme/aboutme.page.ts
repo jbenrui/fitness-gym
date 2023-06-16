@@ -21,11 +21,7 @@ export class AboutmePage implements OnInit {
   };
   constructor( 
     private ScreenSizeSVC : ScreenSizeSVCService
-  ) {
-
-
-    console.log(this.ScreenSizeWidth)
-  }
+  ) {}
 
   getScreenSize(){
     this.ScreenSizeWidth = this.ScreenSizeSVC.getScreenSizeWidth()
