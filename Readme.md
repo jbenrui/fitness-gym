@@ -167,7 +167,7 @@ Este proyecto utiliza Trello para la gestión de las tareas a realizar.
 [Ver vídeo en YouTube](https://www.youtube.com/watch?v=go-7G-VvBFE)
 
 ## Vídeo Final 16/06/2023
-[Ver vídeo en YouTube](https://www.youtube.com/watch?v=go-7G-VvBFE)
+[Ver vídeo en YouTube](https://drive.google.com/file/d/1RwguJxcbambF5IbuNnkAMG5f5XpH9PET/view?usp=sharing)
 ## Desarrollado por:
 - Jose Antonio Benitez (Híbrido)
 - Alberto Moreno (Nativo)
