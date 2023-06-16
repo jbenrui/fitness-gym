@@ -119,6 +119,26 @@ Y por ultimo un boton abajo a la izquierda que nos sirve para cambiar el idioma 
 En esta seccion de la aplicacion vemos el home de la aplicacion, en el nos encontramos una card con la foto de nuestro usuario y un mensaje de bienvenida, podemos ver tambien una barra con las distintas secciones de
 la aplicaion entre ellas esta la de about me que contiene un poco de informacion sobre mi y algunos datos curiosos.
 
+ ### Clientes Grupos y Perfil
+ <table align="center">
+  <tr>
+    <td align="center">
+      <img src="Imagenes/clientes.png" alt="clientes">
+      <p>Clientes</p>
+    </td>
+    <td align="center">
+      <img src="Imagenes/grupos.png" alt="grupos">
+      <p>Grupos</p>
+    </td>
+    <td align="center">
+      <img src="Imagenes/perfil.png" alt="perfil">
+      <p>Perfil</p>
+    </td>
+  </tr>
+</table>
+En la seccion de clientes y grupos podemos ver una lista y botones para ver los editar, borrar y ver los detalles, ademas de un boton para añadir. En la seccion de perfil, nos encontramos informacion sobre el usuario de la aplicacion,
+junto con varios botones para editar el usuario, borrarlo y hacer logout.
+
 ## Trello
 Este proyecto utiliza Trello para la gestión de las tareas a realizar.
 [Trello FitnessGym](https://trello.com/b/bwXyty7u/fitnessgym)
