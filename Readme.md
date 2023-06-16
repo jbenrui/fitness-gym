@@ -83,22 +83,23 @@ Para la asignatura de diseño de interfaces, crearemos un informe a partir de es
 ## Tutorial de Como usar la App:
   
  ### Login, Registro y Recuperar la contraseña:
- <p align="center">
-  <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 20px;">
-    <div style="text-align: center;">
+ <table align="center">
+  <tr>
+    <td align="center">
       <img src="Imagenes/login.png" alt="Login">
       <p>Login</p>
-    </div>
-    <div style="text-align: center;">
+    </td>
+    <td align="center">
       <img src="Imagenes/registro.png" alt="Registro">
       <p>Registro</p>
-    </div>
-    <div style="text-align: center;">
+    </td>
+    <td align="center">
       <img src="Imagenes/recuperarPassword.png" alt="Recuperar Contraseña">
       <p>Recuperar Contraseña</p>
-    </div>
-  </div>
-</p>
+    </td>
+  </tr>
+</table>
+
 
 
 
