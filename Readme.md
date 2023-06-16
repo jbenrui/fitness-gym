@@ -58,12 +58,16 @@ Una vez teniendo el backup desarollamos usando la libreria de pandas el siguient
   <img src="Imagenes/ConvertirEnCSV.png" alt="archivoPython">
 </p>
 
+[Archivo del codigo python](https://github.com/jbenrui/fitness-gym/blob/master/fitnessgym_sources/csv_converter.py)
+
 ## Requisitos Específicos del Módulo Desarrollo de Interfaces (DI)
 Para la asignatura de diseño de interfaces, crearemos un informe a partir de esos datos (Los datos de los clientes y los grupos a los que pertencen) en el que hemos mostrado gráficas como rangos de edad, grupos con mas clientes, monitores que están a cargo de más/menos grupos, el total de los clietnes, una tabla para visualizar todos los datos de los clientes y un mapa con la localidad de estos clientes. Se subirá al repositorio del proyecto y también se publicará en Power BI, compartiéndolo con la dirección de correo educativa del profesor.
 
 <p align="center">
   <img src="Imagenes/PBI.png" alt="DI">
 </p>
+
+[Archivo del informe](https://github.com/jbenrui/fitness-gym/blob/master/fitnessgym_sources/FitnessGymCustomerReport.pbix)
 
 
 ## Manual de instalacion y dependencias: 
@@ -138,6 +142,19 @@ la aplicaion entre ellas esta la de about me que contiene un poco de informacion
 </table>
 En la seccion de clientes y grupos podemos ver una lista y botones para ver los editar, borrar y ver los detalles, ademas de un boton para añadir. En la seccion de perfil, nos encontramos informacion sobre el usuario de la aplicacion,
 junto con varios botones para editar el usuario, borrarlo y hacer logout.
+
+## Bibliografia:
+ - [Ionic Framework](https://ionicframework.com/)
+ - [Angular documentation](https://angular.io/docs)
+ - [Firebase | Firestore - Importar y Exportar](https://www.youtube.com/watch?v=bAeF5Y6V4Sg)
+ - [Ionic Storage](https://youtu.be/vCfAe2esboU)
+ - [Ionic Storage doc](https://github.com/ionic-team/ionic-storage#readme)
+
+## Despliegue:
+https://fitness-gym-80s.web.app
+ 
+## Presentacion: 
+https://drive.google.com/file/d/1j8vYSBcmqcEUUONL-A385_57S6Y_TTgR/view?usp=sharing
 
 ## Trello
 Este proyecto utiliza Trello para la gestión de las tareas a realizar.
