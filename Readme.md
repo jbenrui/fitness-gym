@@ -20,14 +20,14 @@ La aplicación consta de 3 modelos:
 - Número de teléfono
 - DNI/NIE
 - Foto de perfil
-- Día de la inscripción
+- Inscripción
 
 ### Modelo "grupos"
 - Nombre
 - Descripción
 - Foto
 
-### Modelo "empleado_gym" (monitor)
+### Modelo "empleado_gym" (usuario y monitor)
 - Nombre
 - Apellidos
 - Fecha de nacimiento
