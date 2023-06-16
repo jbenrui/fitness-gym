@@ -103,6 +103,22 @@ En esta seccion de la aplicacion vemos el login donde contamos con 4 botones, el
 el tercero es para recupera la contraseña (vemos una frase que nos pregunta si hemos olvidado la contraseña, al hacer click no abre una ventana para introducir nuestro email y recibir un correo).
 Y por ultimo un boton abajo a la izquierda que nos sirve para cambiar el idioma de la aplicacion de español a ingles.
 
+ ### Home y About Me
+ <table align="center">
+  <tr>
+    <td align="center">
+      <img src="Imagenes/home.png" alt="Home">
+      <p>Home</p>
+    </td>
+    <td align="center">
+      <img src="Imagenes/aboutme.png" alt="AboutMe">
+      <p>About Me</p>
+    </td>
+  </tr>
+</table>
+En esta seccion de la aplicacion vemos el home de la aplicacion, en el nos encontramos una card con la foto de nuestro usuario y un mensaje de bienvenida, podemos ver tambien una barra con las distintas secciones de
+la aplicaion entre ellas esta la de about me que contiene un poco de informacion sobre mi y algunos datos curiosos.
+
 ## Trello
 Este proyecto utiliza Trello para la gestión de las tareas a realizar.
 [Trello FitnessGym](https://trello.com/b/bwXyty7u/fitnessgym)
