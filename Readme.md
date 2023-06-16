@@ -66,6 +66,10 @@ Para la asignatura de diseño de interfaces, crearemos un informe a partir de es
 </p>
 
 
+## Manual de instalacion y dependencias: 
+
+
+
 ## Trello
 Este proyecto utiliza Trello para la gestión de las tareas a realizar.
 [Trello FitnessGym](https://trello.com/b/bwXyty7u/fitnessgym)
