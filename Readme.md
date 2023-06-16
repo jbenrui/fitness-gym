@@ -146,7 +146,7 @@ junto con varios botones para editar el usuario, borrarlo y hacer logout.
  - [Ionic Storage](https://youtu.be/vCfAe2esboU)
  - [Ionic Storage doc](https://github.com/ionic-team/ionic-storage#readme)
 
-##Despliegue:
+## Despliegue:
 https://fitness-gym-80s.web.app
  
 
