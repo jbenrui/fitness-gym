@@ -80,6 +80,28 @@ Para la asignatura de diseño de interfaces, crearemos un informe a partir de es
  - Ejecutar ionic serve
 
 
+## Tutorial de Como usar la App:
+  
+ ### Login, Registro y Recuperar la contraseña:
+ <p align="center">
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 20px;">
+    <div style="text-align: center;">
+      <img src="login.png" alt="Login">
+      <p>Login</p>
+    </div>
+    <div style="text-align: center;">
+      <img src="registro.png" alt="Registro">
+      <p>Registro</p>
+    </div>
+    <div style="text-align: center;">
+      <img src="recuperarPassword.png" alt="Recuperar Contraseña">
+      <p>Recuperar Contraseña</p>
+    </div>
+  </div>
+</p>
+
+
+
 ## Trello
 Este proyecto utiliza Trello para la gestión de las tareas a realizar.
 [Trello FitnessGym](https://trello.com/b/bwXyty7u/fitnessgym)
