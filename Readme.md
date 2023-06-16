@@ -58,12 +58,16 @@ Una vez teniendo el backup desarollamos usando la libreria de pandas el siguient
   <img src="Imagenes/ConvertirEnCSV.png" alt="archivoPython">
 </p>
 
+[Archivo del codigo python](https://github.com/jbenrui/fitness-gym/blob/master/fitnessgym_sources/csv_converter.py)
+
 ## Requisitos Específicos del Módulo Desarrollo de Interfaces (DI)
 Para la asignatura de diseño de interfaces, crearemos un informe a partir de esos datos (Los datos de los clientes y los grupos a los que pertencen) en el que hemos mostrado gráficas como rangos de edad, grupos con mas clientes, monitores que están a cargo de más/menos grupos, el total de los clietnes, una tabla para visualizar todos los datos de los clientes y un mapa con la localidad de estos clientes. Se subirá al repositorio del proyecto y también se publicará en Power BI, compartiéndolo con la dirección de correo educativa del profesor.
 
 <p align="center">
   <img src="Imagenes/PBI.png" alt="DI">
 </p>
+
+[Archivo del informe](https://github.com/jbenrui/fitness-gym/blob/master/fitnessgym_sources/FitnessGymCustomerReport.pbix)
 
 
 ## Manual de instalacion y dependencias: 
