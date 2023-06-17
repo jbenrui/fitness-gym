@@ -115,21 +115,19 @@ export class GroupSvcService {
   }
 
   getGroupByIdUser(id:string){
-    return new Promise<User>(async (resolve,reject) => {
+    return new Promise<groupGym[]>(async (resolve,reject) => {
       try{
-        var user = await this.firebase.getDocument('usuarios', id);
-        resolve({
-          id:0,
-          uid: id,
-          first_name: user.data['first_name'],
-          last_name: user.data['last_name'],
-          birthdate: user.data['birthdate'],
-          email: user.data['email'],
-          password: user.data['password'],
-          phone: user.data['phone'],
-          dni: user.data['dni'],
-          photo: user.data['photo'] 
-        });
+        var groups = (await this.firebase.getDocumentsBy('grupos', 'docMonitor', id));
+        var groupsData = groups.map((group) => ({
+          id: 0,
+          docId: group.id,
+          name: group.data.name,
+          description: group.data.description,
+          photo: group.data.photo,
+          clients: group.data.clients,
+          docMonitor: group.data.docMonitor,
+        }));
+        resolve(groupsData);
       }catch(error){
         reject(error);
       }

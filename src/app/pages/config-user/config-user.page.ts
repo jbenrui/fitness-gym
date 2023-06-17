@@ -133,7 +133,7 @@ export class ConfigUserPage implements OnInit {
       try{
         const OnGroup = this.groupSVC.getGroupByIdUser(user.uid);
         
-        if (!OnGroup) {
+        if ((await OnGroup).length === 0) {
           this.onDeleteAlert(user);
         }else{
           this.onUserExistsAlertInGroup(user);
